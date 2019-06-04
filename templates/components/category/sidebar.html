@@ -1,0 +1,29 @@
+<nav>
+	{{#if category.image}}
+		<div class="cat_img">
+			<img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage category.image 'zoom_size'}}">
+		</div>
+	{{/if}}
+    {{#if category.subcategories}}
+        <div class="sidebarBlock SubCategoryBlock">
+            <h5 class="sidebarBlock-heading">{{category.name}}</h5>
+			<div class="subcat_listing">
+				<input class="form-input" id="subcategory-filters-input" type="text" placeholder="Filter subcategories">
+				<ul class="navList">
+					{{#each category.subcategories}}
+					<li class="navList-item">
+						<a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+        </div>
+    {{/if}}
+
+    {{#if category.faceted_search_enabled}}
+        {{> components/faceted-search/index category}}
+    {{else}}
+        {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+    {{/if}}
+</nav>
+      

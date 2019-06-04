@@ -1,0 +1,12 @@
+{
+  "normalStoreUrl": "https://printsaverepeat.com",
+  "port": 3000,
+  "clientId": "",
+  "accessToken": "",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}
