@@ -2,6 +2,7 @@ import { hooks } from '@bigcommerce/stencil-utils';
 import CatalogPage from './catalog';
 import compareProducts from './global/compare-products';
 import FacetedSearch from './common/faceted-search';
+import './b2b/tools/jqPaginator.js';
 
 export default class Category extends CatalogPage {
     onReady() {

@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import _ from 'lodash';
 import utils from '@bigcommerce/stencil-utils';
 import StencilDropDown from './stencil-dropdown';
@@ -39,16 +40,17 @@ export default function () {
         });
     }, 200);
 
-    utils.hooks.on('search-quick', (event) => {
-        const searchQuery = $(event.currentTarget).val();
-
-        // server will only perform search with at least 3 characters
-        if (searchQuery.length < 3) {
-            return;
-        }
-
-        doSearch(searchQuery);
-    });
+    if (sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
+        return;
+    } else {
+        utils.hooks.on('search-quick', (event) => {
+            const searchQuery = $(event.currentTarget).val();
+            // if (searchQuery.length < 3) {
+            //     return;
+            // }
+            doSearch(searchQuery);
+        });
+    }
 
     // Catch the submission of the quick-search
     $quickSearchDiv.on('submit', event => {

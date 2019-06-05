@@ -29,6 +29,11 @@
         {{inject 'secureBaseUrl' settings.secure_base_url}}
         {{inject 'cartId' cart_id}}
         {{inject 'template' template}}
+        {{inject "categories" categories}}
+        {{inject "page_template" template}}
+        {{inject "customer" customer}}
+        {{inject "cartData" cart.items}}
+        {{inject "b2bSettings" settings}}
         {{{snippet 'htmlhead'}}}
     </head>
     <body class="{{page_type}}_mn">
@@ -54,4 +59,4 @@
         {{{snippet 'footer'}}}
     </body>
 </html>
-  
+

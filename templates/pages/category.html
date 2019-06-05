@@ -5,6 +5,9 @@ category:
         limit: {{theme_settings.categorypage_products_per_page}}
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+
+<!-- for bundleb2b -->
+{{inject "categoryId" category.id}}
 {{#partial "head"}}
     {{#if pagination.category.previous}}
         <link rel="prev" href="{{pagination.category.previous}}">
@@ -19,7 +22,7 @@ category:
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 <h1 class="page-heading">{{category.name}}</h1>
 {{{snippet 'categories'}}}
-<div class="page">
+<div class="page" catalog-listing-wrap>
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
@@ -35,9 +38,9 @@ category:
             </aside>
         {{/if}}
     {{/if}}
-	
+
 	<div class="page-content">
-		<main id="product-listing-container" class="viewList"> 
+		<main id="product-listing-container" class="viewList">
 			{{#if category.products}}
 				{{> components/category/product-listing}}
 			{{else}}
@@ -54,12 +57,12 @@ category:
 
 {{/partial}}
 {{> layout/base}}
-  
+
 <style>
 @media (min-width: 801px)
 {
 	.container
-	{	max-width:100%; padding:0 3.6%; width:100%; 
+	{	max-width:100%; padding:0 3.6%; width:100%;
 	}
 	.footer > .container {
         padding: 0 6rem;
@@ -69,4 +72,4 @@ category:
 	{	width:100%; padding:10px 3.6%; max-width: none;
 	}
 }
-</style>  
+</style>
