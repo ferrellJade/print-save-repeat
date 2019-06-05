@@ -1,12 +1,25 @@
 {
   "normalStoreUrl": "https://printsaverepeat.com",
   "port": 3000,
-  "clientId": "",
-  "accessToken": "",
+  "username": "silkdev",
+  "token": "430a8a0187b0d32f4c087b22939f7abcf139f9ee",
   "customLayouts": {
     "brand": {},
     "category": {},
-    "page": {},
+    "page": {
+      "shopping-lists.html": "/shopping-lists/",
+      "shopping-list.html": "/shopping-list/",
+      "user-management.html": "/user-management/",
+      "order-detail.html": "/orderdetail/",
+      "company-register2.html": "/trade-professional-application/",
+      "salerep.html": "/salerep/",
+      "quick-order-pad.html": "/quick-order-pad/",
+      "dashboard.html": "/dashboard/",
+      "b2b-search.html": "/b2b-search/",
+      "b2b": "/b2b"
+    },
     "product": {}
-  }
+  },
+  "clientId": "",
+  "accessToken": ""
 }
