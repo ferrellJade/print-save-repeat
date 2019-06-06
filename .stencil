@@ -1,8 +1,8 @@
 {
   "normalStoreUrl": "https://printsaverepeat.com",
   "port": 3000,
-  "username": "silkdev",
-  "token": "430a8a0187b0d32f4c087b22939f7abcf139f9ee",
+  "username": "labels",
+  "token": "b8c1e745a290b47b60ad7b63a67db6bd3709c55f",
   "customLayouts": {
     "brand": {},
     "category": {},
