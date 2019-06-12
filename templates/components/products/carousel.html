@@ -1,16 +1,41 @@
-<section class="productCarousel" b2b-products-carousel
-    data-list-name="{{list}}"
-    data-slick='{
-        "dots": true,
-        "infinite": false,
-        "mobileFirst": true,
-        "slidesToShow": {{ columns }},
-        "slidesToScroll": 3
-    }'
->
-    {{#each products}}
-    <div class="productCarousel-slide" catalog-product-{{id}}>
-            {{> components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
-    </div>
-    {{/each}}
-</section>
+
+    <section class="productCarousel" b2b-products-carousel
+         data-list-name="{{list}}"
+         data-slick='{
+            "dots": true,
+            "infinite": false,
+            "mobileFirst": true,
+            "slidesToShow": {{ columns }},
+            "slidesToScroll": 3,
+            "responsive": [
+                {
+                    "breakpoint": 1260,
+                    "settings": {
+                        "slidesToScroll": 3,
+                        "slidesToShow": {{ columns }}
+                    }
+                },
+                {
+                    "breakpoint": 800,
+                    "settings": {
+                        "slidesToScroll": 3,
+                        "slidesToShow": 5
+                    }
+                },
+                {
+                    "breakpoint": 550,
+                    "settings": {
+                        "slidesToScroll": 3,
+                        "slidesToShow": 3
+                    }
+                }
+            ]
+        }'
+    >
+        {{#each products}}
+        <div class="productCarousel-slide" catalog-product-{{id}}>
+            {{> components/products/card settings=../settings theme_settings=../theme_settings customer=../customer}}
+        </div>
+        {{/each}}
+    </section>
+

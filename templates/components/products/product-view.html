@@ -239,14 +239,23 @@
         {{{snippet 'product_details'}}}
     </section>
 
-    <article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
-        {{#if theme_settings.show_product_details_tabs}}
-            {{> components/products/description-tabs}}
-        {{else}}
-            {{> components/products/description}}
-        {{/if}}
-    </article>
+<article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
+{{#if theme_settings.show_product_details_tabs}}
+{{> components/products/description-tabs}}
+{{else}}
+{{> components/products/description}}
+{{/if}}
+</article>
+
+<!-- <div class="product-loading-overlay" id="product_loading_overlay">
+    <img src="{{cdn 'img/loading.svg'}}" alt="">
+</div> -->
+
+<div class="b2b-loading-overlay" style="display: none;" id="b2b_loading_overlay">
+    <img src="{{cdn 'img/loading.gif'}}" alt="">
 </div>
+</div>
+
 
 <div id="previewModal" class="modal modal--large" data-reveal>
     <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">

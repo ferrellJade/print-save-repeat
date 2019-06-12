@@ -1,8 +1,8 @@
 ---
 category:
-    shop_by_price: true
-    products:
-        limit: {{theme_settings.categorypage_products_per_page}}
+shop_by_price: true
+products:
+limit: {{theme_settings.categorypage_products_per_page}}
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
 
@@ -20,56 +20,60 @@ category:
 {{#partial "page"}}
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if category.image}}
+<img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage category.image 'zoom_size'}}">
+{{/if}}
 <h1 class="page-heading">{{category.name}}</h1>
+{{{category.description}}}
 {{{snippet 'categories'}}}
 <div class="page" catalog-listing-wrap>
     {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
+    <aside class="page-sidebar" id="faceted-search-container">
+        {{> components/category/sidebar}}
+    </aside>
     {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
+    <aside class="page-sidebar" id="faceted-search-container">
+        {{> components/category/sidebar}}
+    </aside>
     {{else if category.shop_by_price}}
-        {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
-                {{> components/category/sidebar}}
-            </aside>
-        {{/if}}
+    {{#if theme_settings.shop_by_price_visibility}}
+    <aside class="page-sidebar" id="faceted-search-container">
+        {{> components/category/sidebar}}
+    </aside>
+    {{/if}}
     {{/if}}
 
-	<div class="page-content">
-		<main id="product-listing-container" class="viewList">
-			{{#if category.products}}
-				{{> components/category/product-listing}}
-			{{else}}
-				<p>{{lang 'categories.no_products'}}</p>
-			{{/if}}
-		</main>
-		{{#if category.description}}
-			<div class="cat_desc">
-				{{{category.description}}}
-			</div>
-		{{/if}}
-	</div>
+    <div class="page-content">
+        <main id="product-listing-container" class="viewList">
+            {{#if category.products}}
+            {{> components/category/product-listing}}
+            {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+            {{/if}}
+        </main>
+        {{#if category.description}}
+        <div class="cat_desc">
+            {{{category.description}}}
+        </div>
+        {{/if}}
+    </div>
 </div>
 
 {{/partial}}
 {{> layout/base}}
 
 <style>
-@media (min-width: 801px)
-{
-	.container
-	{	max-width:100%; padding:0 3.6%; width:100%;
-	}
-	.footer > .container {
-        padding: 0 6rem;
-        max-width:91.71429rem;
+    @media (min-width: 801px)
+    {
+        .container
+        {	max-width:100%; padding:0 3.6%; width:100%;
+        }
+        .footer > .container {
+            padding: 0 6rem;
+            max-width:91.71429rem;
+        }
+        .hd_cnt
+        {	width:100%; padding:10px 3.6%; max-width: none;
+        }
     }
-	.hd_cnt
-	{	width:100%; padding:10px 3.6%; max-width: none;
-	}
-}
 </style>

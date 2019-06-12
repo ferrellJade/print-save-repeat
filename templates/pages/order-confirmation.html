@@ -50,7 +50,8 @@
             // url: 'https://8l6t4dsd6e.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
             // url: 'https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
             // url: 'https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
-            url: 'https://oiwifueo7h.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
+            // url: 'https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber ', // stag
+            url: 'https://fqdjdxsjne.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber', // flexfire-leds-store
             contentType: "application/json",
             data: JSON.stringify(postData),
             success: function(data) {
@@ -60,62 +61,40 @@
             error: function(jqXHR, textStatus, errorThrown) {
             }
         });
-    } else if(sessionStorage.getItem("pay_email")) {
-        const pay_email = sessionStorage.getItem("pay_email");
-        const bundleb2b_user = JSON.parse(sessionStorage.getItem("bundleb2b_user"));
+    }
+
+    if (sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
+        const b2bUser = JSON.parse(sessionStorage.getItem("bundleb2b_user"));
         const postData = {
             'store_hash':'{{settings.store_hash}}',
             'order_id':'{{checkout.order.id}}',
-            'company_id': bundleb2b_user.company_id,
-            'email': pay_email
+            'customer_id':'{{customer.id}}',
+            'company_id': b2bUser.company_id
         };
+        const pay_email = sessionStorage.getItem("pay_email");
+        if(pay_email) {
+            postData['paypal_billing_email'] = pay_email;
+        }
 
-        //urlL dev: fl4mq0bm40, prod: 8l6t4dsd6e
         $.ajax({
             type: "POST",
-            // url: 'https://8l6t4dsd6e.execute-api.us-west-2.amazonaws.com/prod/invoiceCreate',
-            // url: 'https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod/invoiceCreate',
-            // url: 'https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod/invoiceCreate',
-            url: 'https://oiwifueo7h.execute-api.us-west-2.amazonaws.com/prod/invoiceCreate', // print save repeat
+            // url: 'https://8l6t4dsd6e.execute-api.us-west-2.amazonaws.com/prod/createOrder ',
+            // url: 'https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod/createOrder ', // test
+            // url: 'https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod/createOrder ', //
+            // url: 'https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod/createOrder ', // stag
+            url: 'https://fqdjdxsjne.execute-api.us-west-2.amazonaws.com/prod/createOrder', // flexfire-leds-store
             contentType: "application/json",
             data: JSON.stringify(postData),
             success: function(data) {
                 console.log(data);
-                sessionStorage.removeItem("pay_email");
             },
             error: function(jqXHR, textStatus, errorThrown) {
             }
         });
     }
-
-    if (sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
-        const b2bUser = JSON.parse(sessionStorage.getItem("bundleb2b_user"));
-        if(b2bUser.role_id == 10) {
-            const postData = {
-                'store_hash':'{{settings.store_hash}}',
-                'order_id':'{{checkout.order.id}}',
-                'customer_id':'{{customer.id}}',
-                'company_id': b2bUser.company_id
-            };
-
-            $.ajax({
-                type: "POST",
-                // url: 'https://8l6t4dsd6e.execute-api.us-west-2.amazonaws.com/prod/saleCreateOrder',
-                // url: 'https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod/saleCreateOrder', // test
-                // url: 'https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod/saleCreateOrder', // stag
-                url: 'https://oiwifueo7h.execute-api.us-west-2.amazonaws.com/prod/saleCreateOrder', // print save repeat
-                contentType: "application/json",
-                data: JSON.stringify(postData),
-                success: function(data) {
-                    console.log(data);
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                }
-            });
-        }
-    }
 </script>
 <!-- for bundleb2b end-->
+
 {{/partial}}
 
 {{> layout/empty}}

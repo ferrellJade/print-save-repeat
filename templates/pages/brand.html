@@ -22,16 +22,16 @@ brand:
 {{/if}}
 <h1 class="page-heading">{{brand.name}}</h1>
 {{{snippet 'brand'}}}
-<div class="page">
+<div class="page" catalog-listing-wrap>
     <aside class="page-sidebar" id="faceted-search-container">
         {{> components/brand/sidebar}}
     </aside>
 
     <main class="page-content" id="product-listing-container">
         {{#if brand.products}}
-            {{> components/brand/product-listing}}
+        {{> components/brand/product-listing}}
         {{else}}
-            <p>{{lang 'brands.no_products'}}</p>
+        <p>{{lang 'brands.no_products'}}</p>
         {{/if}}
     </main>
 </div>

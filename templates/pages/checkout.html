@@ -34,6 +34,9 @@
 <!-- for bundleb2b start-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
+    var apiRootUrl = "https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod";
+    var bypass_store_hash = "{{settings.store_hash}}";
+
     $("body").on('change', '[name="paymentProviderRadio"]', function(){
         // PO
         $("#custom_po_number_err").remove();
@@ -231,8 +234,45 @@
         }
     }, 100);
 
+    /*advqty start*/
+    function getCartAdvQtyCheckState(cartId) {
+        return new Promise((res, rej) => {
+            $.ajax({
+                type: "GET",
+                url: `${apiRootUrl}/checkCartQtyLimit?store_hash=${bypass_store_hash}&cart_id=${cartId}`,
+                contentType: "application/json",
+                success: (data) => {
+                    if (data && data.code == 200) {
+                        res(data.response.is_allowed);
+                    } else {
+                        res(false);
+                    }
+                },
+                error: (err) => {
+                    console.log(JSON.Stringify(err));
+                }
+            });
+        });
+
+    }
+
+    async function checkIsAllow() {
+        const cartId = "{{cart_id}}";
+        console.log(cartId);
+        const passedCheck = await getCartAdvQtyCheckState(cartId);
+        console.log(passedCheck);
+
+        if (!passedCheck) {
+            window.location.href = "/cart.php";
+        }
+    }
+
+    checkIsAllow();
+    /* advqty end*/
+
 </script>
 <!-- for bundleb2b end-->
+
 {{/partial}}
 
 {{> layout/empty}}
