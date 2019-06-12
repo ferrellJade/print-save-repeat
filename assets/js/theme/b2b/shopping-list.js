@@ -9,6 +9,7 @@ import pricesStyle from './prices-style';
 import {
 	defaultModal
 } from '../global/modal';
+import AdvQuantityUtil from '../b2b/common/advQuantity';
 
 export default function(customer) {
 
@@ -81,14 +82,16 @@ export default function(customer) {
 	});
 
 	$('#product_qty').on('change', event => {
-		let sku = $("#product_search_results [data-product-sku]")[0].innerText.split('SKU: ')[1];
+		AdvQuantityUtil.handleQuantityChange(event);
+
+		let sku = $("#product_search_results .product-options [data-product-sku]")[0].innerText.split('SKU: ')[1];
 		const $priceSpan = $("#product_search_results [data-product-price]");
 		let qty = $("#product_qty").val();
 		let product_id = $("#product_search_results [data-product-id]").data().productId;
 		const variants = catalog_products[product_id];
 
 		let catalog_price = getCatalogPrice(sku, variants, qty, 2);
-		if(catalog_price == 'NaN') {
+		if (catalog_price == 'NaN') {
 			catalog_price = getCatalogPrice(sku, variants, qty, 1);
 		}
 		$priceSpan.text("$" + pricesStyle(parseFloat(catalog_price).toFixed(2), 2));
@@ -381,7 +384,7 @@ export default function(customer) {
 									    				</div>
 									    			</td>
 									    			<td class="t-align-r col-product-price" data-product-priceValue="${product_priceValue}"><span class="mobile-td-lable">Price:</span><span class="product-price" data-main-price="${product_priceValue}" >$${pricesStyle(product_price,2)}</span></td>
-									    			<td class="t-align-r col-product-qty" data-product-quantity><span class="mobile-td-lable">Qty:</span><input type="text" id="qty_check_${product_id}" value="${product_quantity}" class="input-text qty"></td>
+									    			<td class="t-align-r col-product-qty" data-product-quantity><span class="mobile-td-lable">Qty:</span><input type="text" value="${product_quantity}" class="input-text qty" autocomplete="off" data-advqty-sku="${product_sku}"></td>
 									    			<td class="t-align-r col-action">
 										    			<div class="action-wrap">
 										    				<div class="product-subtotal"><span class="mobile-td-lable">Subtotal:</span><span class="product-subtotal-span">$${pricesStyle(product_subTotal,2)}</span></div>
@@ -407,7 +410,7 @@ export default function(customer) {
 									    				</div>
 									    			</td>
 									    			<td class="t-align-r" data-product-priceValue="${product_priceValue}"><span data-main-price="${product_priceValue}" class="product-price">$${pricesStyle(product_price,2)}</span></td>
-									    			<td class="t-align-r col-product-qty" data-product-quantity><input disabled id="qty_check_${product_id}" type="text" value="${product_quantity}" class="input-text qty"></td>
+									    			<td class="t-align-r col-product-qty" data-product-quantity><input disabled type="text" value="${product_quantity}" class="input-text qty"></td>
 									    			<td class="t-align-r col-action">
 										    			<div class="action-wrap">
 										    				<div class="product-subtotal"><span class="product-subtotal-span">$${pricesStyle(product_subTotal,2)}</span></div>
@@ -546,9 +549,14 @@ export default function(customer) {
 							});
 
 							$shoppingListTable.find("tbody").append(tr);
-							$("#qty_check_" + `${product_id}`).bind("change", function (event) {
+							//$("#qty_check_" + `${product_id}`).bind("change", function(event) {
+
+							// DO NOT USE product_id, the items may has same product_id
+							$(`tr[data-index-${indexI}]`).find("input.qty").bind("change", function(event) {
+								AdvQuantityUtil.handleQuantityChange(event);
+
 								let qty = $(this).val();
-								if(!qty) {
+								if (!qty) {
 									qty = 1;
 								}
 								if (isNaN(qty)) {
@@ -559,15 +567,19 @@ export default function(customer) {
 									return;
 								}
 
+								console.log("handle catalog price", qty);
+
 								const $target = $(event.target);
 								const $productPrice = $target.parents("tr").find(".product-price");
 								const variants = catalog_products[product_id];
 								let catalog_price = getCatalogPrice(product_sku, variants, qty, 2);
-								if(catalog_price == 'NaN') {
+								if (catalog_price == 'NaN') {
 									catalog_price = getCatalogPrice(product_sku, variants, qty, 1);
 								}
 								$productPrice.text("$" + pricesStyle(parseFloat(catalog_price).toFixed(2), 2));
-							})
+							}).on('keyup', (event) => {
+								AdvQuantityUtil.handleQuantityKeyup(event);
+							});
 
 							if (listStatus == "40") {
 								$(".col-action .action-lists").hide();
@@ -587,8 +599,18 @@ export default function(customer) {
 								$(".col-action .action-lists").remove();
 							}*/
 
-
 						}
+
+						// set up advqty
+						const $qtyInputs = $shoppingListTable.find("tbody input.qty");
+						AdvQuantityUtil.setUpAdvQtyMulti($qtyInputs, {
+							bindInputEvents: false,
+							bindButtonEvents: false,
+							tips: true,
+							multiCheck: false,
+							multiCheckMsg: "Please review your shopping list, one or more items have an invalid quantity."
+						});
+
 
 					} else {
 						$("#num_items").text("0");
@@ -601,7 +623,7 @@ export default function(customer) {
 					// sale rep can't modify other customer's shopping-list
 					if (gRoleId == "10") {
 						const bundleb2b_user = JSON.parse(sessionStorage.getItem("bundleb2b_user"));
-						if(bundleb2b_user.user_id != listData.customer_id) {
+						if (bundleb2b_user.user_id != listData.customer_id) {
 							$(".rename-shopping-list").hide();
 						}
 					}
@@ -995,9 +1017,9 @@ export default function(customer) {
 
 
 										$shoppingListTable.find("tbody").append(tr);
-										$("#qty_check_" + `${product_id}`).bind("change", function (event) {
+										$("#qty_check_" + `${product_id}`).bind("change", function(event) {
 											let qty = $(this).val();
-											if(!qty) {
+											if (!qty) {
 												qty = 1;
 											}
 											let re = /^[0-9]+.?[0-9]*$/;
@@ -1158,7 +1180,7 @@ export default function(customer) {
 			success: function(data) {
 				if (data) {
 					$overlay.hide();
-					if(data.code == 1004) {
+					if (data.code == 1004) {
 						swal({
 							text: data.message,
 							type: "error"
@@ -1207,7 +1229,7 @@ export default function(customer) {
 	qty number
 	**/
 	const getCatalogPrice = function(sku, tier_price_arr, qty, type) {
-		if(!qty) {
+		if (!qty) {
 			qty = 1;
 		} else {
 			qty = Number(qty);
@@ -1216,15 +1238,15 @@ export default function(customer) {
 		const catalog_price_arr = tier_price_arr || [];
 		let new_price_arr = [];
 		for (let i = 0; i < catalog_price_arr.length; i++) {
-			if(type == 1) {
-				for(let j in catalog_price_arr[i].tier_price) {
-					if(catalog_price_arr[i].tier_price[j].qty == 1) {
-						if(catalog_price_arr[i].tier_price[j].new_price) {
+			if (type == 1) {
+				for (let j in catalog_price_arr[i].tier_price) {
+					if (catalog_price_arr[i].tier_price[j].qty == 1) {
+						if (catalog_price_arr[i].tier_price[j].new_price) {
 							new_price_arr.push(catalog_price_arr[i].tier_price[j].new_price);
 						}
 					}
 				}
-				if(new_price_arr.length == 0) {
+				if (new_price_arr.length == 0) {
 					new_price_arr.push(catalog_price_arr[0].tier_price[0].price);
 				}
 			} else {
@@ -1234,20 +1256,20 @@ export default function(customer) {
 			}
 		}
 
-		if(type == 1) {
+		if (type == 1) {
 			catalog_price = Math.min(...new_price_arr);
 		} else {
 			let curr_qty = 0;
 			for (let j = 0; j < new_price_arr.length; j++) {
-				const tier_qty =  Number(new_price_arr[j].qty);
-				if(tier_qty > curr_qty && qty >= tier_qty) {
+				const tier_qty = Number(new_price_arr[j].qty);
+				if (tier_qty > curr_qty && qty >= tier_qty) {
 					catalog_price = new_price_arr[j].new_price;
 					curr_qty = tier_qty;
 				}
 			}
-			if(!catalog_price) {
-				for(let i in new_price_arr) {
-					if(new_price_arr[i].type == "fixed") {
+			if (!catalog_price) {
+				for (let i in new_price_arr) {
+					if (new_price_arr[i].type == "fixed") {
 						catalog_price = new_price_arr[i].price;
 						break;
 					}
@@ -1405,6 +1427,16 @@ export default function(customer) {
 			const $tr = $(item).parents("tr");
 
 			const $item_qty_input = $tr.find(".product-qty-col input");
+
+			// check advQty
+			if ($item_qty_input.hasClass("not-valide-inc") || $item_qty_input.hasClass("not-valide-min")) {
+				return swal({
+					text: "Please review your checked items, one or more items have an invalid quantity.",
+					type: "error"
+				})
+			}
+
+
 			let item_qty;
 			if ($item_qty_input.length > 0) {
 				item_qty = $tr.find(".product-qty-col input").val();
@@ -1500,6 +1532,9 @@ export default function(customer) {
 			$("#product_search_results").html("");
 			$("#product_search_skus").val("");
 			$("#skus_search_results").html("");
+
+			// clear advQty
+			AdvQuantityUtil.clearAdvQty($("#product_qty"));
 
 			resetCsvFileUpload();
 		});
@@ -1843,6 +1878,15 @@ export default function(customer) {
 			alert("You have no items in your list.");
 			return;
 		}
+
+		// advQty check
+		if ($trs.find(".not-valid-min").length > 0 || $trs.find(".not-valid-inc").length > 0) {
+			return swal({
+				text: `Please review your shopping list, one or more items have an invalid quantity.`,
+				type: 'error',
+			});
+		}
+
 		let products_arr = [];
 		$trs.each(function(index, item) {
 			let productObj = {};
@@ -1985,11 +2029,14 @@ export default function(customer) {
 					if (resultTrs) {
 						const variants = catalog_products[product_id];
 						let variant_id;
+						let variant_sku = $(response).attr("data-product-base-sku");
 						let catalog_price;
 						const product_price_value = $(response).find("[data-product-price]").attr("data-product-price-value");
 
 						if (variants.length >= 1) {
-							variant_id = variants[0].variant_id;
+							//variant_id = variants[0].variant_id;
+							//variant_sku = variants[0].variant_sku;
+							variant_id = getVariantIdByProductSku(variants, variant_sku);
 							catalog_price = getCatalogPrice(searchQuery, variants, 1, 1);
 						}
 
@@ -2016,6 +2063,11 @@ export default function(customer) {
 						});
 
 						initProductListOptionPrice();
+
+						// set up advqty
+						const $qtyInput = $("#quick_add_section #product_qty");
+						$qtyInput.attr("data-advqty-sku", variant_sku);
+						setUpSearchResultsAdvQty($qtyInput, true);
 					} else {
 						$("#product_search_results").html(`<table class="search-product-table" id="product_search_result_table" product-search-result-table style="margin-bottom:1.5rem;"><tbody><tr><td>No products found.</td></tr></tbody></table>`);
 					}
@@ -2168,12 +2220,15 @@ export default function(customer) {
 
 							let variant_id;
 							let catalog_price;
+							let variant_sku = $(response).attr("data-product-base-sku");
 							const product_price_value = $(response).find("[data-product-price]").attr("data-product-price-value");
 							if (variants.length == 1) {
-								variant_id = variants[0].variant_id;
+								//variant_id = variants[0].variant_id;
+								variant_id = getVariantIdByProductSku(variants, variant_sku);
 							}
 							if (variants.length >= 1) {
-								variant_id = variants[0].variant_id;
+								//variant_id = variants[0].variant_id;
+								variant_id = getVariantIdByProductSku(variants, variant_sku);
 								catalog_price = getCatalogPrice(searchQuery, variants, 1, 1);
 							}
 
@@ -2198,10 +2253,14 @@ export default function(customer) {
 							});
 
 							initProductListOptionPrice();
+
+							// set up advqty
+							const $qtyInput = $("#skus_search_results").find(`[product-search-result-table] tbody tr[data-product-id="${product_id}"] input#product_qty_id`);
+							setUpSearchResultsAdvQty($qtyInput, true);
 						} else {
 							$("#skus_search_results").find("[product-search-result-table] tbody").append(`<tr><td colspan="5">No products found for "${searchQuery}".</td></tr>`);
 						}
-						productQtyChange(product_id);
+						//productQtyChange(product_id);
 
 						//return new ProductDetails($("#product_search_results").find('.optionView'));
 					});
@@ -2424,6 +2483,7 @@ export default function(customer) {
 		const $tr = $changedOption.parents('tr');
 		const $sku = $("[data-product-sku]", $tr);
 		const $checkbox = $("input[type=checkbox]", $tr);
+		const $qtyInput = $("input#product_qty_id", $tr);
 		const $priceSpan = $("[data-product-price]", $tr);
 
 
@@ -2518,6 +2578,18 @@ export default function(customer) {
 				});
 
 			} else {
+
+				// set up advqty
+				if ($form.parents("#product_search_results").length > 0) {
+					const $qtyInputSingle = $("#quick_add_section #product_qty");
+					$qtyInputSingle.attr("data-advqty-sku", data.sku);
+					setUpSearchResultsAdvQty($qtyInputSingle, false);
+				} else {
+					const $qtyInputMulti = $("#product_qty_id", $tr);
+					$qtyInputMulti.attr("data-advqty-sku", data.sku);
+					setUpSearchResultsAdvQty($qtyInputMulti, false);
+				}
+
 				//from search results
 				$checkbox.prop('disabled', true);
 
@@ -2533,9 +2605,9 @@ export default function(customer) {
 					let qty = 1;
 					let productSearch = $form.parents("#product_search_results").length;
 					let skuSearch = $form.parents("#skus_search_results").length;
-					if(productSearch == 1) {
+					if (productSearch == 1) {
 						qty = $("#product_qty").val();
-					} else if(skuSearch == 1) {
+					} else if (skuSearch == 1) {
 						qty = $("#product_qty_id").val();
 					}
 
@@ -2687,6 +2759,18 @@ export default function(customer) {
 			const variantSkus = catalog_products[productId];
 			variantId = variantSkus[0].variant_id;
 		}
+		return variantId;
+	}
+
+	// for simple products
+	const getVariantIdByProductSku = function(variants, sku) {
+		let variantId;
+
+		variants.forEach((v) => {
+			if (v.variant_sku == sku) {
+				variantId = v.variant_id;
+			}
+		});
 		return variantId;
 	}
 
@@ -3282,10 +3366,19 @@ export default function(customer) {
 		//let itemArr = listItems;
 		let itemArr = [];
 		let allOptionsValid = true;
+		//check advqty
+		let invalidAdvQtyCount = 0;
+
 		let $checkedItems = $shoppingListTable.find(".col-checkbox input[type=checkbox]:checked");
 		$checkedItems.each(function(index, item) {
 			const productObj = {};
 			const $tr = $(item).parents("tr");
+
+			//check advqty
+			if ($tr.find(".not-valid-min").length > 0 || $tr.find(".not-valid-inc").length > 0) {
+				invalidAdvQtyCount++;
+			}
+
 			productObj.product_id = $tr.attr("data-product-id");
 			productObj.variant_id = $tr.attr("data-variant-id");
 			productObj.quantity = $tr.find("[data-product-quantity] input").val();
@@ -3301,6 +3394,14 @@ export default function(customer) {
 		});
 
 		console.log(itemArr);
+
+		// advQty check
+		if (invalidAdvQtyCount > 0) {
+			return swal({
+				text: `Please review your shopping list, one or more items have an invalid quantity.`,
+				type: 'error',
+			});
+		}
 
 
 		if (!listItems || listItems.length == 0) {
@@ -4028,9 +4129,26 @@ export default function(customer) {
 		console.log(parsedata);
 
 		if (errorCounter == 0) {
-			$csvCheckInfoContainer.html(`<div>File check passed.</div>`);
+			/*$csvCheckInfoContainer.html(`<div>File check passed.</div>`);
 			//displayCsvProducts(parsedata);
-			addCsvProductsToList(parsedata);
+			addCsvProductsToList(parsedata);*/
+
+			//advQty check
+			const csvdataArr = parsedata.map((item) => {
+				return {
+					sku: item[2],
+					qty: item[3]
+				}
+			});
+
+			AdvQuantityUtil.csvProductsQtyCheck(csvdataArr, () => {
+				$csvCheckInfoContainer.html(`<div>File check passed.</div>`);
+				addCsvProductsToList(parsedata);
+			}, () => {
+				$csvCheckInfoContainer.append(`<div class="csv-error-summary">Your file doesn't pass our "Advance Quantity" check, please correct them and upload the file again.</div>`);
+				$csvCheckInfoContainer.find(".checking-tips").remove();
+			});
+
 
 		} else {
 			$csvCheckInfoContainer.append(`<div class="csv-error-summary">Your file has ${errorCounter} errors, please correct them and upload the file again.</div>`);
@@ -4333,24 +4451,49 @@ export default function(customer) {
 
 	}
 
-	const productQtyChange = function(product_id) {
+	$("#skus_search_results").on('change', '#product_qty_id', (event) => {
+		const $target = $(event.currentTarget);
+		const $tr = $target.parents("tr");
+		const qtyInput = $target;
+		const product_id = $tr.attr("data-product-id");
+
+		AdvQuantityUtil.handleQuantityChange(event);
+
+
+		let sku = $tr.find("[data-product-sku]")[0].innerText.split('SKU: ')[1];
+		const $priceSpan = $tr.find("[data-product-price]");
+		let qty = qtyInput.val();
+		const variants = catalog_products[product_id];
+
+		let catalog_price = getCatalogPrice(sku, variants, qty, 2);
+		if (catalog_price == 'NaN') {
+			catalog_price = getCatalogPrice(sku, variants, qty, 1);
+		}
+		$priceSpan.text("$" + pricesStyle(parseFloat(catalog_price).toFixed(2), 2));
+
+	});
+
+	/*const productQtyChange = function(product_id) {
 		const productQtyOption = $(`[product-search-result-table] tbody tr[data-product-id="${product_id}"]`);
 		const qtyInput = productQtyOption.find("#product_qty_id");
-		if(qtyInput.length > 0) {
+		if (qtyInput.length > 0) {
 			qtyInput.on('change', event => {
+				AdvQuantityUtil.handleQuantityChange(event);
+
+
 				let sku = productQtyOption.find("[data-product-sku]")[0].innerText.split('SKU: ')[1];
 				const $priceSpan = productQtyOption.find("[data-product-price]");
 				let qty = qtyInput.val();
 				const variants = catalog_products[product_id];
 
 				let catalog_price = getCatalogPrice(sku, variants, qty, 2);
-				if(catalog_price == 'NaN') {
+				if (catalog_price == 'NaN') {
 					catalog_price = getCatalogPrice(sku, variants, qty, 1);
 				}
 				$priceSpan.text("$" + pricesStyle(parseFloat(catalog_price).toFixed(2), 2));
 			});
 		}
-	};
+	};*/
 
 	const initProductListOptionPrice = function() {
 		const $form = $('form[data-cart-item-add]');
@@ -4379,6 +4522,20 @@ export default function(customer) {
 		const base_price_symbol = base_price.substring(0, 1);
 		const base_price_value = base_price.replace("$", "").replace(",", "");
 		return base_price_value;
+	}
+
+	const setUpSearchResultsAdvQty = ($qtyInputs, hideAlert) => {
+		AdvQuantityUtil.setUpAdvQtyMulti($qtyInputs, {
+			bindInputEvents: true,
+			bindButtonEvents: false,
+			tips: true
+		}, () => {
+			$qtyInputs.each((l_idx, l_item) => {
+				const $input = $(l_item);
+				//AdvQuantityUtil.handleQuantityChange(null, $input, hideAlert);
+				$input.trigger("change");
+			});
+		});
 	}
 
 

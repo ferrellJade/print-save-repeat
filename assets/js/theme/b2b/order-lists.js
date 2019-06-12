@@ -42,7 +42,6 @@ export default function(context) {
 
     let $overlay; //$ele
     let gOrderData = []; //[]
-    let companyNameData = [];
     //gOrderProducts sample
     //{
     //	"198": [
@@ -449,20 +448,18 @@ export default function(context) {
 
     }
 
-    const renderTable = function(start, end, data) {
+    const renderTable = function(start, end) {
 
         $orderListsTbody.empty();
 
         //for (let i = 0; i < data.length; i++) {
         for (let i = start; i < end; i++) {
-            // const order = data[i];
             const order = gOrderData[i];
-            const company = data[i];
 
             const order_id = order.id;
             const order_total = order.total_inc_tax;
             const order_status = order.status;
-            const company_order_id = company.order_id;
+            const company_name = order.company_name;
             //"date_modified": "Wed, 19 Dec 2018 06:22:19 +0000"
             //"date_created": "2018-12-19 06:22:19"
 
@@ -571,7 +568,6 @@ export default function(context) {
 
             let tr;
             if(gRoleId == "10" && !bypass_company_id) {
-                let company_name = company_order_id === order_id ? company.company_name : "";
                 tr = `
                     <tr data-order-id="${order_id}" data-order-status="${order.status}">
                     <td class="col-thumbnail"><img src="${imageThumbail}" alt=""></td>
@@ -685,28 +681,6 @@ export default function(context) {
                 }
                 if (data) {
                     gOrderData = data;
-                    const order_customers_params = [];
-                    data.forEach(item => {
-                        order_customers_params.push({order_id: item.id, customer_id: item.customer_id});
-                    });
-                    const postParams = {
-                        store_hash: bypass_store_hash,
-                        order_customers: order_customers_params
-                    };
-                    $.ajax({
-                        type: "POST",
-                        url: `${config.apiRootUrl}/ordersCompanyInfo`,
-                        data: JSON.stringify(postParams),
-                        success: function(company_name) {
-                            if (company_name && JSON.stringify(company_name) != "[]") {
-                                renderTable(0, data.length, company_name);
-                                companyNameData = company_name;
-                            }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log("error", JSON.stringify(jqXHR));
-                        }
-                    });
                     const orderNum = data.length;
                     const totalPage = Math.ceil(orderNum / orderPerPage);
                     if (orderNum > orderPerPage) {
@@ -718,12 +692,12 @@ export default function(context) {
 
                                 const start = (num - 1) * orderPerPage;
                                 const end = (num * orderPerPage > orderNum) ? orderNum : num * orderPerPage;
-                                renderTable(start, end, companyNameData);
+                                renderTable(start, end);
                             }
                         });
                     } else {
 
-                        renderTable(0, orderNum, companyNameData);
+                        renderTable(0, orderNum);
                         //$("#jqPagination").jqPaginator('destroy');
                         $("#jqPagination").html("");
                     }

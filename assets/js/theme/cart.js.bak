@@ -1,16 +1,11 @@
 import PageManager from './page-manager';
-import $ from 'jquery';
 import _ from 'lodash';
 import giftCertCheck from './common/gift-certificate-validator';
 import utils from '@bigcommerce/stencil-utils';
 import ShippingEstimator from './cart/shipping-estimator';
-
-import {
-    defaultModal
-} from './global/modal';
-import swal from 'sweetalert2';
+import { defaultModal } from './global/modal';
+import swal from './global/sweet-alert';
 import config from './b2b/config';
-import AdvQuantityUtil from './b2b/common/advQuantity';
 
 export default class Cart extends PageManager {
     onReady() {
@@ -21,71 +16,29 @@ export default class Cart extends PageManager {
             .hide(); // TODO: temporary until roper pulls in his cart components
 
         this.bindEvents();
-
-        // adv quantity
-        this.initAdvQuantity();
     }
 
-    // add adv quantity
     cartUpdate($target) {
         const itemId = $target.data('cartItemid');
         const $el = $(`#qty-${itemId}`);
         const oldQty = parseInt($el.val(), 10);
         const maxQty = parseInt($el.data('quantityMax'), 10);
-        let minQty = parseInt($el.data('quantityMin'), 10);
+        const minQty = parseInt($el.data('quantityMin'), 10);
         const minError = $el.data('quantityMinError');
         const maxError = $el.data('quantityMaxError');
-
-
-        const advQuantityMIn = parseInt($el.attr('data-adv-min-qty'), 10) || 1;
-        const advQuantityIncrement = parseInt($el.attr('data-adv-increment-qty'), 10) || 1;
-
-        let newQty = oldQty;
-
-        if ($target.hasClass('button')) {
-            newQty = $target.data('action') === 'inc' ? oldQty + advQuantityIncrement : oldQty - advQuantityIncrement;
-        }
-
-        newQty = newQty < 0 ? 0 : newQty;
-
-
-        minQty = AdvQuantityUtil.getMinQty(advQuantityMIn, advQuantityIncrement);
-
-
+        const newQty = $target.data('action') === 'inc' ? oldQty + 1 : oldQty - 1;
         // Does not quality for min/max quantity
-        if (newQty !== 0 && newQty < minQty) {
-            /*return swal({
+        if (newQty < minQty) {
+            return swal({
                 text: minError,
                 type: 'error',
-            });*/
-
-            newQty = minQty;
-            /*swal({
-                text: `The minimum purchasable quantity is ${minQty}`,
-                type: 'error',
-            });*/
-
+            });
         } else if (maxQty > 0 && newQty > maxQty) {
-            newQty = maxQty;
-            swal({
+            return swal({
                 text: maxError,
                 type: 'error',
             });
         }
-
-        // check interval qty
-        if ((newQty % advQuantityIncrement) !== 0) {
-            newQty = newQty + (advQuantityIncrement - (newQty % advQuantityIncrement)); // correct the quantity for the user
-
-            /*swal({
-                text: `Please enter increments of ${advQuantityIncrement}.`,
-                type: 'error',
-            });*/
-        }
-
-        console.log(newQty);
-
-        AdvQuantityUtil.validateAdvQty($el);
 
         this.$overlay.show();
 
@@ -95,18 +48,14 @@ export default class Cart extends PageManager {
             if (response.data.status === 'succeed') {
                 // if the quantity is changed "1" from "0", we have to remove the row.
                 const remove = (newQty === 0);
-                //this.refreshContent(remove);
 
-
+                // this.refreshContent(remove);
                 //for bundleb2b
-                if (!remove && sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
+                if (sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
                     this.updateCatalogPrice(itemId);
                 } else {
                     this.refreshContent(remove);
                 }
-
-
-
             } else {
                 $el.val(oldQty);
                 swal({
@@ -116,6 +65,7 @@ export default class Cart extends PageManager {
             }
         });
     }
+
     cartUpdateQtyTextChange($target, preVal = null) {
         const itemId = $target.data('cartItemid');
         const $el = $(`#qty-${itemId}`);
@@ -262,8 +212,6 @@ export default class Cart extends PageManager {
             const quantity = $('[data-cart-quantity]', this.$cartContent).data('cartQuantity') || 0;
 
             $('body').trigger('cart-quantity-update', quantity);
-
-            this.initAdvQuantity();
         });
     }
 
@@ -283,6 +231,7 @@ export default class Cart extends PageManager {
             // update cart quantity
             cartUpdate($target);
         });
+
         // cart qty manually updates
         $('.cart-item-qty-input', this.$cartContent).on('focus', function onQtyFocus() {
             preVal = this.value;
@@ -293,7 +242,6 @@ export default class Cart extends PageManager {
             // update cart quantity
             cartUpdateQtyTextChange($target, preVal);
         });
-
 
         $('.cart-remove', this.$cartContent).on('click', event => {
             const itemId = $(event.currentTarget).data('cartItemid');
@@ -482,18 +430,6 @@ export default class Cart extends PageManager {
 
         // initiate shipping estimator module
         this.shippingEstimator = new ShippingEstimator($('[data-shipping-estimator]'));
-    }
-
-    // for bundleb2b
-    // for simple products
-    getVariantIdByProductId(productId) {
-        let variantId;
-
-        if (this.catalog_products && this.catalog_products[productId]) {
-            const variantSkus = this.catalog_products[productId];
-            variantId = variantSkus[0].variant_id;
-        }
-        return variantId;
     }
 
     // for bundleb2b
@@ -692,15 +628,5 @@ export default class Cart extends PageManager {
             }
         });
 
-    }
-
-    initAdvQuantity() {
-        const $cartInputs = $(".cart-item .form-input--incrementTotal");
-        AdvQuantityUtil.setUpAdvQtyMulti($cartInputs, {
-            bindInputEvents: false,
-            bindButtonEvents: false,
-            multiCheck: false,
-            multiCheckMsg: "Please review your cart, one or more items have an invalid quantity."
-        });
     }
 }

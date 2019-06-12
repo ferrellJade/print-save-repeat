@@ -12,7 +12,8 @@ import quickOrderPad from './quick-order-pad';
 import accountSetting from './account-setting';
 import b2bSearch from './b2b-search';
 import config from './config';
-import priceStyle from './prices-style'
+import priceStyle from './prices-style';
+import AdvQuantityUtil from './common/advQuantity';
 
 export default function() {
   let isSearchPage = location.href.indexOf('b2b-search');
@@ -22,6 +23,30 @@ export default function() {
     b2bSearch(keywords);
   }
   const accountSettingUrl = this.context.urls.account.details;
+
+
+  /*setup listing card advqty start*/
+  AdvQuantityUtil.globalInit();
+
+
+  const $advQtyInputs = $("[advqty-card-actions] [advqty-card-input]");
+  AdvQuantityUtil.setUpAdvQtyMulti($advQtyInputs, {
+    bindInputEvents: true,
+    bindButtonEvents: true,
+    tips: true
+  }, () => {
+    $advQtyInputs.each((l_idx, l_item) => {
+      const $input = $(l_item);
+      AdvQuantityUtil.handleQuantityChange(null, $input, true);
+    });
+  });
+
+  /*setup listing card advqty end*/
+
+  /*bind checkout button click start*/
+  $("body").on('click', '[advqty-checkout-button]', (event) => AdvQuantityUtil.checkCartAdvQty(event));
+  /*bind checkout button click end*/
+
 
   //hide wishlist and account settings when user belongs to a company
   function hideWishlist() {
@@ -108,7 +133,7 @@ export default function() {
               "company_name": company_name
             };
             sessionStorage.setItem("bundleb2b_user", JSON.stringify(user_info));
-            if(sessionStorage.getItem("b2b_flag") == "false") {
+            if (sessionStorage.getItem("b2b_flag") == "false") {
               sessionStorage.setItem("b2b_flag", "true");
               location.reload();
             }
@@ -164,7 +189,7 @@ export default function() {
                       "role_id": 10
                     };
                     sessionStorage.setItem("bundleb2b_user", JSON.stringify(user_info));
-                    if(sessionStorage.getItem("b2b_flag") == "false") {
+                    if (sessionStorage.getItem("b2b_flag") == "false") {
                       sessionStorage.setItem("b2b_flag", "true");
                       location.reload();
                     }
@@ -432,7 +457,7 @@ export default function() {
           "role_id": 10
         };
         sessionStorage.setItem("bundleb2b_user", JSON.stringify(user_info));
-        if(sessionStorage.getItem("b2b_flag") == "false") {
+        if (sessionStorage.getItem("b2b_flag") == "false") {
           sessionStorage.setItem("b2b_flag", "true");
           location.reload();
         }
@@ -579,10 +604,9 @@ export default function() {
       When the user hasn't got the `catalog_products` data yet, he clicks on other b2b pages.
       Regain `catalog_products` data
        */
-      if(!sessionStorage.getItem("catalog_products")) {
+      if (!sessionStorage.getItem("catalog_products")) {
         if (sessionStorage.getItem("catalog_id")) {
-          getCatalogProducts(sessionStorage.getItem("catalog_id"), function() {
-          });
+          getCatalogProducts(sessionStorage.getItem("catalog_id"), function() {});
         }
       }
 

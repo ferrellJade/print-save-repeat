@@ -12,6 +12,7 @@ import {
 import {
     get
 } from 'https';
+import AdvQuantityUtil from '../b2b/common/advQuantity';
 
 export default function(customer) {
     console.log("quick order pad");
@@ -32,7 +33,7 @@ export default function(customer) {
     const tableTrHtml = `<tr>
             <td class="col-action-left"><sapn class="remove-icon" data-remove-cell>&minus;</span></td>
             <td class="col-sku"><div class="product-info"><input class="form-input" type="text" data-sku><div class="sku-search-results"></div><span class="error-info">Invalid SKU <span>!</span></span></div></td>
-            <td class="col-qty"><input class="form-input" type="text" data-qty></td>
+            <td class="col-qty"><input class="form-input" type="text" autocomplete="off" data-qty></td>
             <td class="col-price"><span data-total-price></span></td>
         </tr>`;
 
@@ -115,6 +116,18 @@ export default function(customer) {
         const variant_id = $(this).attr('data-variant-id');
         const variant_sku = $(this).attr('data-variant-sku');
 
+
+        // set up advqty
+        $qtyInput.attr("data-advqty-sku", variant_sku);
+        AdvQuantityUtil.setUpAdvQtyMulti($qtyInput, {
+            bindInputEvents: true,
+            bindButtonEvents: false,
+            tips: true
+        }, () => {
+            //AdvQuantityUtil.handleQuantityChange(null, $qtyInput, true);
+            $qtyInput.trigger("change");
+        });
+
         utils.api.product.getById(product_id, {
             template: 'b2b/quick-order-pad-product'
         }, (err, response) => {
@@ -195,23 +208,32 @@ export default function(customer) {
     });
 
     //product qty - change
-    $("body").on("change", '[data-qty]', function() {
-        const $tr = $(this).parents("tr");
+    $("body").on("change", '[data-qty]', (event) => {
+        AdvQuantityUtil.handleQuantityChange(event);
+        const $input = $(event.currentTarget);
+
+        const $tr = $input.parents("tr");
         const $priceContainer = $tr.find('[data-price]');
         const $totalPriceContainer = $tr.find('[data-total-price]');
-        const qty = $(this).val();
+        const qty = $input.val();
+        console.log("change", qty);
         const product_id = $tr.attr("data-product-id");
         const variant_id = $tr.attr("data-variant-id");
         const base_price = $tr.attr("data-price-value");
         if (!qty) {
             return;
         }
-        $(this).removeClass("error");
+        $input.removeClass("error");
         if (product_id && variant_id) {
             const tier_price = getCatalogPrice(base_price, product_id, variant_id, qty);
             $priceContainer.text(`${gPriceSymbol}${pricesStyle(tier_price,2)}`);
             $totalPriceContainer.text(`${gPriceSymbol}${pricesStyle(parseFloat(tier_price*qty).toFixed(2),2)}`);
         }
+    }).on('keyup', '[data-qty]', (event) => {
+        const $input = $(event.currentTarget);
+        const $submitBtn = $("#add_to_cart");
+        AdvQuantityUtil.validateAdvQty($input, $submitBtn);
+
     });
 
     //add to cart
@@ -556,7 +578,7 @@ export default function(customer) {
             const product_id = products[i][0];
             const variant_id = products[i][1];
             const variant_sku = products[i][2];
-            const product_qty = products[i][3].replace(/[^0-9]/ig,"");
+            const product_qty = products[i][3].replace(/[^0-9]/ig, "");
             const product_options = products[i][4];
 
             //shopping-list-csv-product-item
@@ -637,7 +659,6 @@ export default function(customer) {
     const uploadDealcsv = function() {};
     /*------ Method for read uploded csv file ------*/
     uploadDealcsv.prototype.getCsv = function(e) {
-        debugger;
         let input = document.getElementById('customer_sku_csv');
         input.addEventListener('change', function() {
 
@@ -731,8 +752,22 @@ export default function(customer) {
         console.log(parsedata);
 
         if (errorCounter == 0) {
-            $csvCheckInfoContainer.html(`<div>File check passed.</div>`);
-            displayCsvProducts(parsedata);
+
+            //advQty check
+            const csvdataArr = parsedata.map((item) => {
+                return {
+                    sku: item[2],
+                    qty: item[3]
+                }
+            });
+
+            AdvQuantityUtil.csvProductsQtyCheck(csvdataArr, () => {
+                $csvCheckInfoContainer.html(`<div>File check passed.</div>`);
+                displayCsvProducts(parsedata);
+            }, () => {
+                $csvCheckInfoContainer.append(`<div style="font-weight:600;">Your file doesn't pass our "Advance Quantity" check, please correct them and upload the file again.</div>`);
+                $csvCheckInfoContainer.find(".checking-tips").remove();
+            });
 
         } else {
             $csvCheckInfoContainer.append(`<div style="font-weight:600;">Your file has ${errorCounter} errors, please correct them and upload the file again.</div>`);

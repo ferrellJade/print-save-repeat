@@ -4,6 +4,7 @@ import urlUtils from '../common/url-utils';
 import Url from 'url';
 import $ from "jquery";
 import pricesStyle from './prices-style';
+import AdvQuantityUtil from './common/advQuantity';
 
 export default function(keywords) {
 	// non-b2b user
@@ -19,9 +20,6 @@ export default function(keywords) {
 	const b2bUserInfo = JSON.parse(sessionStorage.getItem("bundleb2b_user"));
 	const gRoleId = b2bUserInfo.role_id;
 	let gCatalogId;
-
-
-
 	if (b2bUserInfo.catalog_id) {
 		gCatalogId = b2bUserInfo.catalog_id;
 	}
@@ -130,14 +128,52 @@ export default function(keywords) {
 				`${rrp_price}<span data-product-price-without-tax="" class="price price--withoutTax">$${pricesStyle(catalog_price,2)}</span>` +
 				`</div></div>`;
 
+			let card_advqty = "",
+				product_cariants = prods[i].variants;
+			if (prods[i].base_sku == product_cariants[0].variant_sku) {
+				card_advqty = `<div class="card-cart-action form-increment" advqty-card-actions>
+                                        <button type="button" class="button button--icon" data-action="dec">
+                                            <span class="is-srOnly">Decrease Quantity:</span>
+                                            <i class="icon" aria-hidden="true">
+                                                <svg>
+                                                    <use xlink:href="#icon-keyboard-arrow-down"/>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                        <input class="form-input form-input--incrementTotal"
+                                               
+                                               type="tel"
+                                               value="1"
+                                               min="1"
+                                               pattern="[0-9]*"
+                                               aria-live="polite"
+                                               autocomplete="off"
+                                               advqty-card-input
+                                               data-advqty-sku="${prods[i].base_sku}">
+                                        <button type="button" class="button button--icon" data-action="inc">
+                                            <span class="is-srOnly">Increase Quantity:</span>
+                                            <i class="icon" aria-hidden="true">
+                                                <svg>
+                                                    <use xlink:href="#icon-keyboard-arrow-up"/>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                        <div class="advqty-loading-overlay-blank" data-advqty-increment-overlay></div>
+
+                                        <button type="button" advqty-card-addToCart class="button button--small button--primary cart-button" data-href="/cart.php?action=add&product_id=${prods[i].product_id}" data-product-id="${prods[i].product_id}"></button>
+                                    </div>`;
+			}
+
 			ul.append(`<li class="product"><article class="card">` +
 				`<figure class="card-figure">${pro_bg_a}${figcaption}</figure>` +
-				`<div class="card-body">${card_body}</div>` +
+				`<div class="card-body">${card_advqty}${card_body}</div>` +
 				`</article></li>`)
 		}
+
+		initAdvqty();
 	}
 
-	const changeSort = function () {
+	const changeSort = function() {
 		let result = $("#b2b_search_result");
 		let sort = `<fieldset class="form-fieldset actionBar-section" style="width: 210px; float: none;">
 						<div class="form-field">
@@ -155,7 +191,7 @@ export default function(keywords) {
 						</div>
 					</fieldset>`;
 		result.prepend(sort);
-		$('#sort').on('change', function () {
+		$('#sort').on('change', function() {
 			sortField = $('#sort').val();
 			sortOrder = $("#sort").find("option:selected").data("sort");
 			ajaxUrl = `${config.apiRootUrl}/search?store_hash=${config.storeHash}&keywords=${keywords}&is_facets=1&catalog_id=${gCatalogId}&pageNumber=${pageNumber}&pageSize=${pageSize}&sortField=${sortField}&sortOrder=${sortOrder}`;
@@ -470,6 +506,20 @@ export default function(keywords) {
 			}
 		}
 		return tier_price;
+	}
+
+	const initAdvqty = () => {
+		const $advQtyInputs = $("[advqty-card-actions] [advqty-card-input]");
+		AdvQuantityUtil.setUpAdvQtyMulti($advQtyInputs, {
+			bindInputEvents: true,
+			bindButtonEvents: true,
+			tips: true
+		}, () => {
+			$advQtyInputs.each((l_idx, l_item) => {
+				const $input = $(l_item);
+				AdvQuantityUtil.handleQuantityChange(null, $input, true);
+			});
+		});
 	}
 
 
