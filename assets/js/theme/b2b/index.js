@@ -96,8 +96,7 @@ export default function() {
 
     console.log("logged in customer: email=%s id=%s", bypass_email, bypass_customer_id)
 
-    const page_templete = this.context.page_templete.replace(/\\/g, '/');
-    //console.log(page_templete);
+    const page_templete = this.context.page_template.replace(/\\/g, '/');
 
     const getUserInfo = function(_callback1, _callback2) {
       //get role id
@@ -654,7 +653,7 @@ export default function() {
     sessionStorage.removeItem("bundleb2b_sale");
 
     // not logined in , navigation to login pae
-    const page_templete = this.context.page_templete.replace(/\\/g, '/');
+    const page_templete = this.context.page_template.replace(/\\/g, '/');
     console.log(page_templete);
     if (page_templete == 'pages/custom/page/shopping-lists') {
       window.location = this.context.urls.auth.login;
