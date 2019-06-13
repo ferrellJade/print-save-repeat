@@ -27,7 +27,7 @@ export default class ProductDetails {
         const $productOptionsElement = $('[data-product-option-change]', $form);
         const hasOptions = $productOptionsElement.html().trim().length;
         const hasDefaultOptions = $productOptionsElement.find('[data-default]').length;
-
+        console.log('qweeeeeeeeeee', $("[data-product-sku]", this.$scope),  this.$scope)
         $productOptionsElement.on('change', event => {
 
             this.productOptionsChanged(event);
@@ -1136,7 +1136,6 @@ export default class ProductDetails {
      *
      */
     addProductToCartB2B(event, form) {
-
         // Do not do AJAX if browser doesn't support FormData
         if (window.FormData === undefined) {
             return;

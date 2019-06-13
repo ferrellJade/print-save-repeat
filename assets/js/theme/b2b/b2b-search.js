@@ -4,7 +4,6 @@ import urlUtils from '../common/url-utils';
 import Url from 'url';
 import $ from "jquery";
 import pricesStyle from './prices-style';
-import AdvQuantityUtil from './common/advQuantity';
 
 export default function(keywords) {
 	// non-b2b user
@@ -20,6 +19,9 @@ export default function(keywords) {
 	const b2bUserInfo = JSON.parse(sessionStorage.getItem("bundleb2b_user"));
 	const gRoleId = b2bUserInfo.role_id;
 	let gCatalogId;
+
+
+
 	if (b2bUserInfo.catalog_id) {
 		gCatalogId = b2bUserInfo.catalog_id;
 	}

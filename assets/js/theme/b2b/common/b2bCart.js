@@ -5,7 +5,6 @@ import swal from 'sweetalert2';
 import pricesStyle from '../prices-style';
 import config from '../config';
 
-const apiRootUrl = config.apiRootUrl;
 const bypass_store_hash = config.storeHash;
 const catalog_products = JSON.parse(sessionStorage.getItem("catalog_products") || "[]");
 const gCatalogId = sessionStorage.getItem("catalog_id");
@@ -318,6 +317,7 @@ function handlePickListOptions(cartItemObj, cb) {
 				type: "GET",
 				url: `${config.apiRootUrl}/productvariants?store_hash=${config.storeHash}&product_id=${product_id}&variant_id=${variant_id}`,
 				success: (data) => {
+					console.log(data);
 					let extras_list = [];
 
 
@@ -344,7 +344,7 @@ function handlePickListOptions(cartItemObj, cb) {
 
 							if (showCustomPrice) {
 								const extra_product_id = selectedPickListOptins[k].option_data;
-								const extra_variant_id = getVariantIdByProductId(extra_product_id);
+								const extra_variant_id = this.getVariantIdByProductId(extra_product_id);
 								if (extra_variant_id) {
 									extras_list.push({
 										"extra_product_id": extra_product_id,
@@ -386,6 +386,7 @@ function handlePickListOptions(cartItemObj, cb) {
 	});
 
 }
+
 
 // for simple products
 function getVariantIdByProductId(productId) {

@@ -160,7 +160,7 @@ export default class Search extends CatalogPage {
             },
             headers: {
                 'x-xsrf-token': window.BCData && window.BCData.csrf_token ? window.BCData.csrf_token : '',
-            }
+            },
         }).done(data => {
             const formattedResults = [];
 
@@ -225,8 +225,6 @@ export default class Search extends CatalogPage {
             $facetedSearchContainer.html(content.sidebar);
             $searchHeading.html(content.heading);
             $searchCount.html(content.productCount);
-
-
             if (sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
                 //for b2b user
                 this.handleCatalogProducts();
@@ -234,13 +232,9 @@ export default class Search extends CatalogPage {
                 //for non b2b user
                 $(".navList-item .product-count").show();
             }
-
-
             $('html, body').animate({
                 scrollTop: 0,
             }, 100);
-
-            this.initAdvqty();
         });
     }
 
@@ -273,7 +267,6 @@ export default class Search extends CatalogPage {
 
         return false;
     }
-
     //for b2b
     handleCatalogProducts() {
         const catalog_products = JSON.parse(sessionStorage.getItem("catalog_products"));
@@ -318,7 +311,6 @@ export default class Search extends CatalogPage {
         });
 
     }
-
     //for bundleb2b
     getCatalogPrice(base_price, tier_price_array, qty) {
         //let tier_price = base_price;

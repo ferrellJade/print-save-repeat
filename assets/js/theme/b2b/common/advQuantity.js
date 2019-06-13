@@ -412,6 +412,7 @@ const advQuantity = {
 
         // add to cart
         $("body").on('click', '[advqty-card-actions] [advqty-card-addToCart]', (event) => {
+
             const $addToCartButton = $(event.currentTarget);
             const qty = $addToCartButton.siblings("[advqty-card-input]").val();
             const productId = $addToCartButton.attr("data-product-id");

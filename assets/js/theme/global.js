@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import './global/jquery-migrate';
 import './common/select-option-plugin';
 import PageManager from './page-manager';
@@ -38,12 +37,12 @@ export default class Global extends PageManager {
         // after which preload nearby elements.
         window.lazySizesConfig = window.lazySizesConfig || {};
         window.lazySizesConfig.loadMode = 1;
+
         cartPreview(this.context.secureBaseUrl, this.context.cartId);
         quickSearch();
         currencySelector();
         foundation($(document));
         quickView(this.context);
-        cartPreview();
         compareProducts(this.context.urls);
         carousel();
         menu();
@@ -55,19 +54,5 @@ export default class Global extends PageManager {
         svgInjector();
 
         b2b.call(this);
-
-        $.ajax({
-            type: "GET",
-            url: "../api/storefront/carts?include=lineItems.digitalItems.options,lineItems.physicalItems.options",
-            contentType: "application/json",
-            accept: "application/json",
-            async: false,
-            success: (data) => {
-                if (data && data.length > 0) {
-
-                    console.log("cart data", data);
-                }
-            }
-        });
     }
 }

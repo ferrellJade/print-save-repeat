@@ -5,7 +5,6 @@ $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings
 @if contains($fonts, "'Clear Sans', sans-serif") {
     @include clear-sans;
 }
-@import "clear-sans";
 
 @font-face {
     font-family: "fontawesome";

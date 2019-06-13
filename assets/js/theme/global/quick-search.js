@@ -40,6 +40,7 @@ export default function() {
 
     // stagger searching for 200ms after last input
     const doSearch = _.debounce((searchQuery) => {
+
         // default bc function
         utils.api.search.search(searchQuery, {
             template: 'search/quick-results'
@@ -223,7 +224,7 @@ export default function() {
         const catalog_products = JSON.parse(sessionStorage.getItem("catalog_products"));
 
         const searchResultsCount = 5;
-        const searchUrl = `${config.apiRootUrl}/search?store_hash=${config.storeHash}&keywords=${searchQuery}&is_facets=0&catalog_id=${gCatalogId}&pageNumber=1&pageSize=${searchResultsCount}`;
+        const searchUrl = `${config.apiRootUrl}/search?store_hash=${config.storeHash}&keywords=${searchQuery}&is_facets=0&catalog_id=${gCatalogId}&pageNumber=1&pageSize=${searchResultsCount}&is_quick=Y`;
         b2b_search(searchUrl).then(res => {
             console.log(res);
             console.log(res.payload);
