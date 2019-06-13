@@ -34,7 +34,7 @@
 <!-- for bundleb2b start-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
-    var apiRootUrl = "https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod";
+    var apiRootUrl = "https://oiwifueo7h.execute-api.us-west-2.amazonaws.com/prod";
     var bypass_store_hash = "{{settings.store_hash}}";
 
     $("body").on('change', '[name="paymentProviderRadio"]', function(){
@@ -141,6 +141,7 @@
 
     /*save po number to our databse and order*/
     $("body").on('click', '#checkout-payment-continue-custom', (event)=> {
+
         let can_purchase = true;
 
         if($("#radio-cheque").prop("checked") == true) {

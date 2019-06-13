@@ -47,11 +47,7 @@
 
         $.ajax({
             type: "POST",
-            // url: 'https://8l6t4dsd6e.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
-            // url: 'https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
-            // url: 'https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
-            // url: 'https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber ', // stag
-            url: 'https://fqdjdxsjne.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber', // flexfire-leds-store
+            url: 'https://oiwifueo7h.execute-api.us-west-2.amazonaws.com/prod/purchaseOrderNumber',
             contentType: "application/json",
             data: JSON.stringify(postData),
             success: function(data) {
@@ -78,11 +74,7 @@
 
         $.ajax({
             type: "POST",
-            // url: 'https://8l6t4dsd6e.execute-api.us-west-2.amazonaws.com/prod/createOrder ',
-            // url: 'https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod/createOrder ', // test
-            // url: 'https://l4m45kvzfh.execute-api.us-west-2.amazonaws.com/prod/createOrder ', //
-            // url: 'https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod/createOrder ', // stag
-            url: 'https://fqdjdxsjne.execute-api.us-west-2.amazonaws.com/prod/createOrder', // flexfire-leds-store
+            url: 'https://oiwifueo7h.execute-api.us-west-2.amazonaws.com/prod/createOrder',
             contentType: "application/json",
             data: JSON.stringify(postData),
             success: function(data) {

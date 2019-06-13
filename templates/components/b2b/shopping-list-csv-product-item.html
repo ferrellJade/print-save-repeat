@@ -4,7 +4,7 @@
         <td class="col-product-figure"><img src="{{#if product.main_image}}{{getImage product.main_image 'shopping_list_size' (cdn theme_settings.default_image_product)}}{{/if}}" alt="{{product.image.alt}}" title="{{product.image.alt}}"></td>
         <td class="col-product-info">{{product.title}}
         	<div class="product-options">
-        	    <span data-product-sku>{{#if product.sku}}<b>SKU:</b> {{product.sku}}{{/if}}</span>
+        	    <span >{{#if product.sku}}<b>SKU:</b> {{product.sku}}{{/if}}</span>
             <form class="form option-form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data" data-option-form>
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="product_id" value="{{product.id}}"/>
