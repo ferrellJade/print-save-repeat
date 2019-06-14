@@ -4,6 +4,7 @@
 
 
 .modal {
+    left: 50%;
     margin: 0 auto;
     max-height: 90%;
     max-width: 95%;
@@ -11,6 +12,8 @@
     outline: none;
     overflow: hidden;
     padding: 0;
+    top: 50%!important;
+    transform: translate(-50%,-50%);
 }
 
 .modal--large {

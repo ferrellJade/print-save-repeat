@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ locale_name }}">
-    <head>
-        <title>{{ head.title }}</title>
-        {{{ resourceHints }}}
-        {{{ head.meta_tags }}}
-        {{{ head.config }}}
-        {{#block "head"}} {{/block}}
+<head>
+    <title>{{ head.title }}</title>
+    {{{ resourceHints }}}
+    {{{ head.meta_tags }}}
+    {{{ head.config }}}
+    {{#block "head"}} {{/block}}
 
         <link href="{{ head.favicon }}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,46 +16,65 @@
             document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
         </script>
 
-        {{ getFontsCollection }}
-        {{{stylesheet '/assets/css/theme.css'}}}
+    {{ getFontsCollection }}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Source+Sans+Pro:400,600,700" rel="stylesheet">
+    {{{stylesheet '/assets/css/theme.css'}}}
 
-        {{{head.scripts}}}
-        {{{head.rsslinks}}}
+    {{{head.scripts}}}
+    {{{head.rsslinks}}}
 
-        {{inject 'themeSettings' theme_settings}}
-        {{inject 'genericError' (lang 'common.generic_error')}}
-        {{inject 'maintenanceMode' settings.maintenance}}
-        {{inject 'urls' urls}}
-        {{inject 'secureBaseUrl' settings.secure_base_url}}
-        {{inject 'cartId' cart_id}}
-        {{inject 'template' template}}
-        {{inject "categories" categories}}
-        {{inject "page_template" template}}
-        {{inject "customer" customer}}
-        {{inject "cartData" cart.items}}
-        {{inject "b2bSettings" settings}}
-        {{{snippet 'htmlhead'}}}
-    </head>
-    <body class="{{page_type}}_mn">
-        {{{snippet 'header'}}}
-        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+    {{inject 'themeSettings' theme_settings}}
+    {{inject 'store_hash' settings.store_hash}}
+    {{inject 'genericError' (lang 'common.generic_error')}}
+    {{inject 'maintenanceMode' settings.maintenance}}
+    {{inject 'urls' urls}}
+    {{inject 'secureBaseUrl' settings.secure_base_url}}
+    {{inject 'cartId' cart_id}}
+    {{inject 'template' template}}
+    {{inject "categories" categories}}
+    {{inject "page_template" template}}
+    {{inject "customer" customer}}
+    {{inject "cartData" cart.items}}
+    {{inject "b2bSettings" settings}}
+    {{{snippet 'htmlhead'}}}
+    <script src="//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q"></script>
+    <!-- handle sessionstorage -->
+    <script>
+        let jc = JSON.parse({{jsContext}});
+        console.log(jc)
+        {{#if customer}}
 
-        {{#and settings.privacy_cookie settings.is_eu_ip_address}}
-            {{> components/common/cookie}}
-        {{/and}}
+        {{else}}
 
-        {{> components/common/header }}
-        {{> components/common/body }}
-        {{> components/common/footer }}
+        {{/if}}
 
-        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
-        <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
-        <script>
-            // Exported in app.js
-            window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
-        </script>
+    </script>
+</head>
+<body>
+    {{{snippet 'header'}}}
+    <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
-        {{{footer.scripts}}}
-        {{{snippet 'footer'}}}
-    </body>
+    {{#if settings.privacy_cookie  settings.is_eu_ip_address}}
+        {{> components/common/cookie}}
+    {{/if}}
+
+    {{> components/common/header }}
+    {{> components/common/body }}
+    {{> components/common/footer }}
+
+<!-- advqty tip -->
+<div id="adv_tip" class="adv_tip"></div>
+
+<script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+<script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+
+<script>
+    // Exported in app.js
+    window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+</script>
+
+{{{footer.scripts}}}
+{{{snippet 'footer'}}}
+
+</body>
 </html>

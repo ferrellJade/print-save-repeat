@@ -4,6 +4,7 @@ import urlUtils from '../common/url-utils';
 import Url from 'url';
 import $ from "jquery";
 import pricesStyle from './prices-style';
+import AdvQuantityUtil from './common/advQuantity';
 
 export default function(keywords) {
 	// non-b2b user

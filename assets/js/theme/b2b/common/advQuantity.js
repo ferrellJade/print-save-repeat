@@ -60,6 +60,7 @@ function getAdvQtyBySkus(skus_arr) {
 }
 
 function validateAdvQty($input, $submitBtn) {
+    debugger
     const $messageContainer = $input.attr("adv-message-tip") == "true" ? $("#adv_tip") : $input.parent();
     const qty = parseInt($input.val()) || 1;
     const minQty = parseInt($input.attr("data-adv-min-qty"), 10) || 1;
@@ -412,7 +413,6 @@ const advQuantity = {
 
         // add to cart
         $("body").on('click', '[advqty-card-actions] [advqty-card-addToCart]', (event) => {
-
             const $addToCartButton = $(event.currentTarget);
             const qty = $addToCartButton.siblings("[advqty-card-input]").val();
             const productId = $addToCartButton.attr("data-product-id");

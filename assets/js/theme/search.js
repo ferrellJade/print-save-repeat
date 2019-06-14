@@ -111,6 +111,8 @@ export default class Search extends CatalogPage {
             this.showProducts();
         }
 
+        // const validator = this.initValidation($searchForm)
+        //     .bindValidation($searchForm.find('#'));
         const validator = this.initValidation($searchForm)
             .bindValidation($searchForm.find('#search_query_adv'));
 

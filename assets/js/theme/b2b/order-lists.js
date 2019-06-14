@@ -587,7 +587,7 @@ export default function(context) {
                     <td class="t-align-c">${order_modified_date_formatted}</td>
                     <td class="t-align-c">${createdBy_first_name} ${createdBy_last_name}</td>
                     <td class=" t-align-c"><span class="account-orderStatus-label order-status-text">${order_status}</span></td>
-                    <td class="actions-field t-align-r" style="width: 540px;">`;
+                    <td class="actions-field t-align-c" style="width: 540px;">`;
             }
             if (isBelongToCatalog) {
                 tr += `
