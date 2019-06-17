@@ -255,7 +255,6 @@ export default function(customer) {
 			url: `${config.apiRootUrl}/requisitionlist?customer_id=${bypass_customer_id}`,
 			data: JSON.stringify(postData),
 			success: function(data) {
-				//debugger
 				console.log("2-17-1 added shopping list", data);
 
 				$newShoppingListModal.find(".modal-close").eq(0).click();

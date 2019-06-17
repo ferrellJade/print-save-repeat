@@ -1,5 +1,4 @@
 import $ from 'jquery';
-
 import shippingLists from './shopping-lists';
 import shippingList from './shopping-list';
 import userManagement from './user-management';
@@ -18,7 +17,7 @@ import AdvQuantityUtil from './common/advQuantity';
 export default function() {
   let isSearchPage = location.href.indexOf('b2b-search');
   if (isSearchPage > -1) {
-    let params = location.href.split('search_query_adv=')[1];
+    let params = location.href.split('search_query=')[1];
     let keywords = params.split('&')[0];
     b2bSearch(keywords);
   }
@@ -230,6 +229,7 @@ export default function() {
       console.log(bundleb2b_user);
       if (bundleb2b_user.role_id == "0") {
         // set b2b-search action
+        setB2bAction();
         // role - junior user
         $("#form-action-addToCart").hide();
         $("#user_shoppinglist_nav").show();
@@ -240,6 +240,8 @@ export default function() {
           window.location.href = accountSettingUrl;
         }
       } else if (bundleb2b_user.role_id == "1" || bundleb2b_user.role_id == "2") {
+        // set b2b-search action
+        setB2bAction();
         // role -senior buyer & admin user
         /*$(".navBar--account .navBar-section").prepend(`<li class="navBar-item">
         <a class="navBar-action" href="/dashboard/">Dashboard</a>
@@ -256,6 +258,8 @@ export default function() {
           window.location.href = accountSettingUrl;
         }
       } else if (bundleb2b_user.role_id == "10") {
+        // set b2b-search action
+        setB2bAction();
         // role - salerep
         $(".navBar--account .navBar-section").prepend(`<li class="navBar-item">
                 <a class="navBar-action" href="/salerep/">Dashboard</a>
@@ -282,6 +286,10 @@ export default function() {
       // for third-part search tool
       $(".snize-ac-results").addClass("b2b-hidden");
       $("section.quickSearchResults").addClass("b2b-visible");
+    }
+
+    const setB2bAction = function () {
+      $("#b2b_search_form").attr('action', '/b2b-search');
     }
 
 

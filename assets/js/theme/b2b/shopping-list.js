@@ -9,7 +9,7 @@ import pricesStyle from './prices-style';
 import {
 	defaultModal
 } from '../global/modal';
-import AdvQuantityUtil from '../b2b/common/advQuantity';
+import AdvQuantityUtil from './common/advQuantity';
 
 export default function(customer) {
 
@@ -320,7 +320,6 @@ export default function(customer) {
 							const product_quantity = listItemData.qty;
 							const options_list = listItemData.options_list || [];
 							const options_list_data = JSON.stringify(options_list);
-
 							const indexI = pi;
 
 							let in_catalog = true;
@@ -340,7 +339,6 @@ export default function(customer) {
 							}
 
 							const product_sku = listItemData.variant_sku;
-
 							let product_priceValue = parseFloat(listItemData.base_price).toFixed(2);
 							let product_price = "$" + product_priceValue;
 							const product_url = listItemData.url;
@@ -434,7 +432,6 @@ export default function(customer) {
 								const product_url = $productInfo.attr("data-product-url");
 								$(`[data-product-${tep_product_id}]`).find(".product-title a").attr("href", product_url);
 								$(`[data-product-${tep_product_id}]`).find("[product-url]").attr("href", product_url);
-
 								//hundle options
 								const optionsStr = $productInfo.attr("data-product-options");
 
@@ -536,9 +533,8 @@ export default function(customer) {
 									$(`tr[data-index-${tmp_index}]`).find(".product-options").html(optionHtml);
 
 									//console.log(options_list);
-
 									if (listStatus != "40" && gRoleId != "0") {
-										$(`tr[data-index-${tmp_index}]`).find(".action-lists").prepend(`<a class="button button--primary button--small" href="#" data-edit-option><i class="fa fa-edit"></i> Edit Options</a>`);
+									$(`tr[data-index-${tmp_index}]`).find(".action-lists").prepend(`<a class="button button--primary button--small" href="#" data-edit-option><i class="fa fa-edit"></i> Edit Options</a>`);
 									}
 									if (listStatus == "30" && gRoleId == "0") {
 										$(`tr[data-index-${tmp_index}]`).find(".action-lists").prepend(`<a class="button button--primary button--small" href="#" data-edit-option><i class="fa fa-edit"></i> Edit Options</a>`);
@@ -1203,7 +1199,6 @@ export default function(customer) {
 
 
 	const getIdsByVariantSku = function(variantSku) {
-		//debugger
 		console.log(catalog_products);
 		let idsArr = [];
 		for (let pid in catalog_products) {
@@ -1223,11 +1218,11 @@ export default function(customer) {
 	}
 
 	/**
-	get catalog price
-	base_price float
-	tier_price array
-	qty number
-	**/
+	 get catalog price
+	 base_price float
+	 tier_price array
+	 qty number
+	 **/
 	const getCatalogPrice = function(sku, tier_price_arr, qty, type) {
 		if (!qty) {
 			qty = 1;
@@ -1274,8 +1269,15 @@ export default function(customer) {
 						break;
 					}
 				}
+				if(!catalog_price) {
+					catalog_price_arr.forEach(item => {
+						catalog_price = item.variant_price;
+					})
+				}
+
 			}
 		}
+
 		catalog_price = parseFloat(catalog_price).toFixed(2);
 		return catalog_price;
 	}
@@ -4126,7 +4128,7 @@ export default function(customer) {
 			parsedata.push(productDataArr);
 
 		}
-		console.log(parsedata);
+		console.log('parsedataparsedataparsedataparsedata',parsedata);
 
 		if (errorCounter == 0) {
 			/*$csvCheckInfoContainer.html(`<div>File check passed.</div>`);
@@ -4140,7 +4142,6 @@ export default function(customer) {
 					qty: item[3]
 				}
 			});
-
 			AdvQuantityUtil.csvProductsQtyCheck(csvdataArr, () => {
 				$csvCheckInfoContainer.html(`<div>File check passed.</div>`);
 				addCsvProductsToList(parsedata);
@@ -4525,6 +4526,7 @@ export default function(customer) {
 	}
 
 	const setUpSearchResultsAdvQty = ($qtyInputs, hideAlert) => {
+
 		AdvQuantityUtil.setUpAdvQtyMulti($qtyInputs, {
 			bindInputEvents: true,
 			bindButtonEvents: false,

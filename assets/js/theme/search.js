@@ -114,7 +114,7 @@ export default class Search extends CatalogPage {
         // const validator = this.initValidation($searchForm)
         //     .bindValidation($searchForm.find('#'));
         const validator = this.initValidation($searchForm)
-            .bindValidation($searchForm.find('#search_query_adv'));
+            .bindValidation($searchForm.find('#'));
 
         this.context.categoryTree.forEach((node) => {
             treeData.push(this.formatCategoryTreeForJSTree(node));

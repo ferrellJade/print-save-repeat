@@ -17,7 +17,7 @@
         </script>
 
     {{ getFontsCollection }}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Source+Sans+Pro:400,600,700" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Source+Sans+Pro:400,600,700" rel="stylesheet">-->
     {{{stylesheet '/assets/css/theme.css'}}}
 
     {{{head.scripts}}}
@@ -37,7 +37,6 @@
     {{inject "cartData" cart.items}}
     {{inject "b2bSettings" settings}}
     {{{snippet 'htmlhead'}}}
-    <script src="//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q"></script>
     <!-- handle sessionstorage -->
     <script>
         let jc = JSON.parse({{jsContext}});
@@ -47,6 +46,8 @@
         {{else}}
 
         {{/if}}
+        // let customers = JSON.parse({{customer}});
+
 
     </script>
 </head>
@@ -54,7 +55,7 @@
     {{{snippet 'header'}}}
     <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
-    {{#if settings.privacy_cookie  settings.is_eu_ip_address}}
+    {{#if settings.privacy_cookie}}
         {{> components/common/cookie}}
     {{/if}}
 
@@ -66,7 +67,9 @@
 <div id="adv_tip" class="adv_tip"></div>
 
 <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
-<script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+<script src="{{cdn 'assets/dist/theme-bundle.main.js'}}">
+
+</script>
 
 <script>
     // Exported in app.js

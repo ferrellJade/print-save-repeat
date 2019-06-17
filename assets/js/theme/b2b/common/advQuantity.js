@@ -25,7 +25,6 @@ function getAdvQtyState() {
                     console.log("AdvQtyActive Enabled");
                     res();
                 } else {
-                    console.log("AdvQtyActive Disabled");
                     rej(data);
                 }
 
@@ -60,7 +59,6 @@ function getAdvQtyBySkus(skus_arr) {
 }
 
 function validateAdvQty($input, $submitBtn) {
-    debugger
     const $messageContainer = $input.attr("adv-message-tip") == "true" ? $("#adv_tip") : $input.parent();
     const qty = parseInt($input.val()) || 1;
     const minQty = parseInt($input.attr("data-adv-min-qty"), 10) || 1;
@@ -199,7 +197,7 @@ function handleQuantityChange(event, $_input, hideAlert) {
                 text: `The minimum purchasable quantity is ${quantityMin}`,
                 type: 'error',
             });
-            
+
             return;
         }*/
 
@@ -232,7 +230,7 @@ function handleQuantityChange(event, $_input, hideAlert) {
                 text: `Please enter increments of ${advQuantityIncrement}.`,
                 type: 'error',
             });
-            
+
             return;
         }*/
     }
@@ -547,7 +545,9 @@ const advQuantity = {
         validateAdvQty($input, $addToCartBtn);
 
     },
+
     csvProductsQtyCheck: (itemArr, _passcheckCb, _notpasscheckCb) => {
+
         /* itemArr:
          *   [{sku: "SKU074", qty: "1"}
          *   {sku: "SKU077", qty: "2"}
@@ -683,7 +683,6 @@ const advQuantity = {
                 if (options.bindButtonEvents) {
                     bindButtonEvents($input);
                 }
-
                 if (options.tips) {
                     $input.attr("adv-message-tip", true);
                     hoverShow($input);

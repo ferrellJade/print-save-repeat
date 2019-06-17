@@ -849,11 +849,11 @@ export default function(customer) {
 
 
     /**
-    get catalog price
-    base_price float
-    tier_price array
-    qty number
-    **/
+     get catalog price
+     base_price float
+     tier_price array
+     qty number
+     **/
     const getCatalogPrice = function(base_price, productId, variantId, qty) {
         let catalog_price = base_price;
         if (catalog_products[productId]) {

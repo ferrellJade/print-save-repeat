@@ -1831,6 +1831,7 @@ export default class ProductDetails {
         const productId = $('[name="product_id"]', this.$scope).val();
 
         if (this.catalog_products && this.catalog_products[productId]) {
+            debugger
             /*const $price = $("[data-product-price-without-tax]", this.$scope) || $("[data-product-price-with-tax]", this.$scope);
             const base_price = $price.text().trim();
             const base_price_symbol = base_price.substring(0, 1);
@@ -1864,6 +1865,12 @@ export default class ProductDetails {
                         tier_price = tier_price_array[j].new_price;
                     }
                 }
+            }
+
+            if(tier_price == "Infinity" || tier_price == "undefined") {
+                variantSkus && variantSkus.forEach( d => {
+                    tier_price = d.variant_price;
+                });
             }
 
             if (tier_price) {
