@@ -4,49 +4,13 @@
     <list default="true" id="656e7330-0c0e-49a4-a17a-9734ed465477" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CS-LIGHT-PSR-2019 4_05_2019-3.2.0.zip" beforeDir="false" afterPath="$PROJECT_DIR$/CS-LIGHT-PSR-2019 4_05_2019-3.2.0.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.1.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.10.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.10.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.11.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.11.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.12.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.12.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.12.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.3.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.4.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.5.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.6.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.6.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.7.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.7.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.8.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.8.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.9.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.9.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/b2b/common/advQuantity.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/b2b/common/advQuantity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/b2b/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/b2b/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/b2b/quick-order-pad.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/b2b/quick-order-pad.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/b2b/shopping-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/b2b/shopping-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/b2b/shopping-lists.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/b2b/shopping-lists.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/common/product-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/common/product-details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/theme/brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/brand.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/theme/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/theme/global/quick-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/global/quick-search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/advance-quantity.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/advance-quantity.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/b2b-style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/b2b-style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/jquery-ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/jquery-ui.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsed/templates/07ce322712a5213e31d3c9f99aa03f28.json" beforeDir="false" afterPath="$PROJECT_DIR$/parsed/templates/07ce322712a5213e31d3c9f99aa03f28.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsed/templates/61d36a0fde365f4492804dc3a5815ad4.json" beforeDir="false" afterPath="$PROJECT_DIR$/parsed/templates/61d36a0fde365f4492804dc3a5815ad4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsed/templates/b4dfb7c01159ff7328e3860cbebf92bb.json" beforeDir="false" afterPath="$PROJECT_DIR$/parsed/templates/b4dfb7c01159ff7328e3860cbebf92bb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/theme/global/sweet-alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/global/sweet-alert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsed/templates/640e52afb9a9d7c3c5ab6f78764e0231.json" beforeDir="false" afterPath="$PROJECT_DIR$/parsed/templates/640e52afb9a9d7c3c5ab6f78764e0231.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/components/common/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/components/common/footer.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,34 +25,79 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/shopping-list.js">
+        <entry file="file://$PROJECT_DIR$/assets/js/theme/global/sweet-alert.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="1274" column="22" selection-start-line="1272" selection-start-column="20" selection-end-line="1274" selection-end-column="22" />
+            <state relative-caret-position="190">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/shopping-list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4256">
+              <caret line="224" selection-start-line="224" selection-end-line="224" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#td#1;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#td#1;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#8;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-view.js">
+        <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="37" column="43" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="43" />
+            <state relative-caret-position="171">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/layout/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/theme/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3021">
+              <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4142">
+              <caret line="232" selection-start-line="232" selection-end-line="232" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="84" column="87" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="87" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -97,87 +106,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
+        <entry file="file://$PROJECT_DIR$/templates/components/common/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="1875" column="29" lean-forward="true" selection-start-line="1875" selection-start-column="29" selection-end-line="1875" selection-end-column="29" />
+            <state relative-caret-position="-314">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="n#div#0;n#!!top" />
+                <element signature="n#div#1;n#!!top" />
+                <element signature="n#footer#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/shopping-list.html">
+        <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/order-details.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="224" selection-start-line="224" selection-end-line="224" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#6575#6581#1" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#8;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#10721#10727#0" expanded="true" />
-                <element signature="e#10727#10733#0" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="308">
+              <caret line="743" column="49" selection-start-line="743" selection-start-column="49" selection-end-line="743" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/shopping-lists.html">
+        <entry file="file://$PROJECT_DIR$/templates/components/category/sidebar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#1403#1408#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/scss/advance-quantity.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/common/b2bFacetedSearch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="239" column="35" selection-start-line="239" selection-start-column="35" selection-end-line="239" selection-end-column="35" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/common/b2bCart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="327" column="61" selection-start-line="327" selection-start-column="61" selection-end-line="327" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/components/search/advanced-search.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+            <state relative-caret-position="304">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -186,20 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$quickSearchResults</find>
-      <find>doSearch</find>
-      <find>quickSearch</find>
-      <find>jsContext</find>
-      <find>deleteB2cSearch</find>
-      <find>snippet location htmlhead</find>
-      <find>searchanise_script</find>
-      <find>console.log('1111111111111111111', confirmB2cSearch())</find>
-      <find>hideb2bQuickResults</find>
-      <find>confirmB2cSearch</find>
-      <find>debugger</find>
-      <find>.advqty_message</find>
-      <find>adv-message-tip</find>
-      <find>AdvQuantityUtil</find>
       <find>tips</find>
       <find>deb</find>
       <find>advqty_message</find>
@@ -216,6 +157,20 @@
       <find>type == 1</find>
       <find>getCatalogPrice</find>
       <find>variant_price</find>
+      <find>sweetalert2</find>
+      <find>sweetAlert</find>
+      <find>debugger</find>
+      <find>preloadedSuggestions</find>
+      <find>jsContext</find>
+      <find>/salerep</find>
+      <find>https://searchanise-ef84.kxcdn.com/preload_data.3e2q9V4C6q.js</find>
+      <find>searchanise_script</find>
+      <find>deleteB2cSearch</find>
+      <find>3e2q9V4C6q</find>
+      <find>subcategory-filters-input</find>
+      <find>faceted-search-container</find>
+      <find>Sign out</find>
+      <find>navUser-action</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -259,23 +214,26 @@
         <option value="$PROJECT_DIR$/assets/scss/jquery-ui.scss" />
         <option value="$PROJECT_DIR$/assets/js/theme/b2b/shopping-lists.js" />
         <option value="$PROJECT_DIR$/templates/components/common/quick-search.html" />
-        <option value="$PROJECT_DIR$/assets/js/theme/b2b/index.js" />
         <option value="$PROJECT_DIR$/templates/components/common/header.html" />
         <option value="$PROJECT_DIR$/assets/scss/b2b-style.scss" />
         <option value="$PROJECT_DIR$/assets/js/theme/auth.js" />
-        <option value="$PROJECT_DIR$/assets/js/theme/global.js" />
-        <option value="$PROJECT_DIR$/templates/layout/base.html" />
-        <option value="$PROJECT_DIR$/assets/js/theme/global/quick-search.js" />
         <option value="$PROJECT_DIR$/templates/pages/custom/page/shopping-list.html" />
         <option value="$PROJECT_DIR$/templates/pages/custom/page/shopping-lists.html" />
         <option value="$PROJECT_DIR$/assets/scss/advance-quantity.scss" />
         <option value="$PROJECT_DIR$/assets/js/theme/b2b/common/advQuantity.js" />
         <option value="$PROJECT_DIR$/assets/js/theme/b2b/shopping-list.js" />
         <option value="$PROJECT_DIR$/assets/js/theme/common/product-details.js" />
+        <option value="$PROJECT_DIR$/assets/js/theme/global/sweet-alert.js" />
+        <option value="$PROJECT_DIR$/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/templates/layout/base.html" />
+        <option value="$PROJECT_DIR$/assets/js/theme/global.js" />
+        <option value="$PROJECT_DIR$/assets/js/theme/b2b/index.js" />
+        <option value="$PROJECT_DIR$/templates/components/common/footer.html" />
+        <option value="$PROJECT_DIR$/assets/js/theme/global/quick-search.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -287,7 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,71 +260,26 @@
             <path>
               <item name="csf" type="b2602c69:ProjectViewProjectNode" />
               <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csf" type="b2602c69:ProjectViewProjectNode" />
               <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csf" type="b2602c69:ProjectViewProjectNode" />
               <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="b2b" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="b2b" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,6 +293,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="E:\tools\WebStorm 2019.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -418,15 +331,18 @@
       <workItem from="1560528033091" duration="4241000" />
       <workItem from="1560533415136" duration="49190000" />
       <workItem from="1560733089632" duration="5464000" />
-      <workItem from="1560739360688" duration="10203000" />
+      <workItem from="1560739360688" duration="10976000" />
+      <workItem from="1561000378964" duration="13514000" />
+      <workItem from="1561024415107" duration="1839000" />
+      <workItem from="1561078982883" duration="6885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133756000" />
+    <option name="totallyTimeSpent" value="156767000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
@@ -445,6 +361,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -473,56 +390,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js</url>
-          <line>153</line>
+          <line>158</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js</url>
-          <line>225</line>
+          <line>230</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/scss/fonts/_fonts.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/fonts/_clear-sans.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/tools/jqPaginator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/order-confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="76" column="36" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/order-details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="987" column="39" selection-start-line="987" selection-start-column="31" selection-end-line="987" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/components/amp/products/product-view-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/components/products/add-to-cart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
@@ -662,16 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/order-lists.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11001">
-          <caret line="590" column="13" selection-start-line="590" selection-start-column="13" selection-end-line="590" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/quick-order-pad.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -757,16 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/shopping-lists.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4769">
@@ -777,40 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3116">
-          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/components/common/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -818,10 +643,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/index.js">
+    <entry file="file://$PROJECT_DIR$/assets/dist/theme-bundle.main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="19">
+          <caret line="1695" column="23" selection-start-line="1695" selection-start-column="23" selection-end-line="1695" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/common/advQuantity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1021">
+          <caret line="608" selection-start-line="608" selection-end-line="608" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/shopping-list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23997">
+          <caret line="1274" column="22" selection-start-line="1272" selection-start-column="20" selection-end-line="1274" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="37" column="43" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35359">
+          <caret line="1872" column="19" selection-start-line="1872" selection-start-column="19" selection-end-line="1872" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/advance-quantity.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1330">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/common/b2bCart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6118">
+          <caret line="327" column="61" selection-start-line="327" selection-start-column="61" selection-end-line="327" selection-end-column="61" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -832,22 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/shopping-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="224" selection-start-line="224" selection-end-line="224" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#6575#6581#1" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#8;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#10721#10727#0" expanded="true" />
-            <element signature="e#10727#10733#0" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -862,89 +725,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/dist/theme-bundle.main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1695" column="23" selection-start-line="1695" selection-start-column="23" selection-end-line="1695" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/common/b2bCart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="327" column="61" selection-start-line="327" selection-start-column="61" selection-end-line="327" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/templates/layout/empty.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/common/b2bFacetedSearch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
+        <state relative-caret-position="522">
           <caret line="239" column="35" selection-start-line="239" selection-start-column="35" selection-end-line="239" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/sweetalert2/sweetalert2.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11429">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/order-lists.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/sweet-alert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/shopping-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4256">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#8;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/common/advQuantity.js">
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1021">
-          <caret line="608" selection-start-line="608" selection-end-line="608" />
+        <state relative-caret-position="171">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3021">
+          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4142">
+          <caret line="232" selection-start-line="232" selection-end-line="232" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/advance-quantity.scss">
+    <entry file="file://$PROJECT_DIR$/templates/components/category/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+        <state relative-caret-position="304">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-view.js">
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/order-details.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="43" />
+        <state relative-caret-position="308">
+          <caret line="743" column="49" selection-start-line="743" selection-start-column="49" selection-end-line="743" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="84" column="87" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="87" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/shopping-list.js">
+    <entry file="file://$PROJECT_DIR$/templates/components/common/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="1274" column="22" selection-start-line="1272" selection-start-column="20" selection-end-line="1274" selection-end-column="22" />
+        <state relative-caret-position="-314">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="1875" column="29" lean-forward="true" selection-start-line="1875" selection-start-column="29" selection-end-line="1875" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="n#div#0;n#!!top" />
+            <element signature="n#div#1;n#!!top" />
+            <element signature="n#footer#0;n#!!top" />
           </folding>
         </state>
       </provider>

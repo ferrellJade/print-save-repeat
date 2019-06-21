@@ -79,30 +79,38 @@ export default function() {
 
     const deleteB2cSearch = function () {
         let scriptTag = document.getElementsByTagName("script");
-        let scriptTagSrc = "//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
+        let scriptTagSrc = "https://searchanise-ef84.kxcdn.com/preload_data.3e2q9V4C6q.js";
+        let scriptTagSrcJS = "https://www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
+        let searchanise = "//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
+        let searchaniseMinJS = "https://searchanise-ef84.kxcdn.com/widgets.14239.min.js";
         $(".page .page-content--centered:first-child").hide();
         scriptTag.forEach(d => {
-            if (d.src == scriptTagSrc) {
+            if (d.src == scriptTagSrcJS) {
+                d.src = "";
+            }else if(d.src == scriptTagSrc) {
+                d.src = "";
+            }else if(d.src == searchanise){
+                d.src = "";
+            }else if(d.src == searchaniseMinJS){
                 d.src = "";
             }
         });
     };
-
     // for bundleb2b
-    const searchanise_script = function() {
-        let scriptTag = document.getElementsByTagName("script");
-
-        let scriptTagSrc = "//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
-        let flag = scriptTag.forEach(d => d.src == scriptTagSrc );
-        if(!flag) {
-            let head = document.getElementsByTagName('head')[0];
-            let js = document.createElement("script");
-            js.type = "text/javascript";
-            js.src = "//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
-            head.appendChild(js);
-        }
-
-    };
+    // const searchanise_script = function() {
+    //     let scriptTag = document.getElementsByTagName("script");
+    //
+    //     let scriptTagSrc = "//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
+    //     let flag = scriptTag.forEach(d => d.src == scriptTagSrc );
+    //     if(!flag) {
+    //         let head = document.getElementsByTagName('head')[0];
+    //         let js = document.createElement("script");
+    //         js.type = "text/javascript";
+    //         js.src = "//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
+    //         head.appendChild(js);
+    //     }
+    //
+    // };
     if (sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
         $(".quickSearchResults").addClass("b2b-products");
 
@@ -111,7 +119,6 @@ export default function() {
         $searchQuery.on('focus', event => {
             $('.snize-ac-results').css("display", "none");
             $('.snize-ac-results').remove();
-
         });
 
         $searchQuery.unbind('keydown').bind('keydown', function(e) {
@@ -126,7 +133,6 @@ export default function() {
             $('.snize-ac-results').remove();
         });
         $searchQuery.on('keyup', function(e) {
-            console.log('keyupkeyupkeyupkeyupkeyup', $("#quickSearch .b2b-quick-results ul").length)
             $('.snize-ac-results').css("display", "none");
             $('.snize-ac-results').remove();
 
@@ -134,8 +140,7 @@ export default function() {
 
 
     }else {
-        $("#b2b_search_form").attr('action', '/search-results-page');
-        searchanise_script();
+        // searchanise_script();
     }
 
     // Catch the submission of the quick-search

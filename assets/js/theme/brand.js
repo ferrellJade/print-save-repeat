@@ -17,7 +17,7 @@ export default class Brand extends CatalogPage {
 
     initFacetedSearch() {
         const $productListingContainer = $('#product-listing-container');
-        const $facetedSearchContainer = $('#faceted-search-container');
+        const $facetedSearchContainer = $('#');
         const productsPerPage = this.context.brandProductsPerPage;
         const requestOptions = {
             template: {
