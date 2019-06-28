@@ -78,13 +78,15 @@ export default function() {
     });
 
     const deleteB2cSearch = function () {
+        let arr = [];
         let scriptTag = document.getElementsByTagName("script");
+        arr.push(scriptTag)
         let scriptTagSrc = "https://searchanise-ef84.kxcdn.com/preload_data.3e2q9V4C6q.js";
         let scriptTagSrcJS = "https://www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
         let searchanise = "//www.searchanise.com/widgets/bigcommerce/init.js?api_key=3e2q9V4C6q";
         let searchaniseMinJS = "https://searchanise-ef84.kxcdn.com/widgets.14239.min.js";
         $(".page .page-content--centered:first-child").hide();
-        scriptTag.forEach(d => {
+        arr && arr.forEach(d => {
             if (d.src == scriptTagSrcJS) {
                 d.src = "";
             }else if(d.src == scriptTagSrc) {
