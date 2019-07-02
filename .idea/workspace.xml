@@ -3,34 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="656e7330-0c0e-49a4-a17a-9734ed465477" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS-LIGHT-PSR-2019 4_05_2019-3.2.0.zip" beforeDir="false" afterPath="$PROJECT_DIR$/CS-LIGHT-PSR-2019 4_05_2019-3.2.0.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/dist/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.1.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.10.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.10.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.11.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.11.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.12.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.12.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.12.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.3.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.4.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.5.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.6.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.6.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.7.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.7.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.8.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.8.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.9.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.chunk.9.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/theme-bundle.main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/dist/theme-bundle.main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/theme/global/quick-search.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/global/quick-search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/theme/common/product-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/theme/common/product-details.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -44,30 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/theme/global/sweet-alert.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/pages/custom/page/shopping-list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4928">
-              <caret line="224" selection-start-line="224" selection-end-line="224" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#8;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/theme/global.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -113,11 +65,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="85" column="97" lean-forward="true" selection-start-line="85" selection-start-column="97" selection-end-line="85" selection-end-column="97" />
+            <state relative-caret-position="1760">
+              <caret line="85" column="97" selection-start-line="85" selection-start-column="97" selection-end-line="85" selection-end-column="97" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.stencil">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-308">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -128,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/components/common/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="462">
               <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
               <folding>
                 <element signature="n#div#0;n#!!top" />
@@ -161,8 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tips</find>
-      <find>deb</find>
       <find>advqty_message</find>
       <find>actions-field</find>
       <find>is_enable</find>
@@ -173,7 +144,6 @@
       <find>setUpAdvQtyMulti</find>
       <find>setUpSearchResultsAdvQty</find>
       <find>quickview</find>
-      <find>debu</find>
       <find>type == 1</find>
       <find>getCatalogPrice</find>
       <find>variant_price</find>
@@ -191,6 +161,9 @@
       <find>faceted-search-container</find>
       <find>Sign out</find>
       <find>navUser-action</find>
+      <find>debu</find>
+      <find>data-wishlist-add</find>
+      <find>this.$wishlistContainer</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -242,7 +215,6 @@
         <option value="$PROJECT_DIR$/assets/scss/advance-quantity.scss" />
         <option value="$PROJECT_DIR$/assets/js/theme/b2b/common/advQuantity.js" />
         <option value="$PROJECT_DIR$/assets/js/theme/b2b/shopping-list.js" />
-        <option value="$PROJECT_DIR$/assets/js/theme/common/product-details.js" />
         <option value="$PROJECT_DIR$/assets/js/theme/global/sweet-alert.js" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/templates/layout/base.html" />
@@ -250,14 +222,14 @@
         <option value="$PROJECT_DIR$/assets/js/theme/b2b/index.js" />
         <option value="$PROJECT_DIR$/templates/components/common/footer.html" />
         <option value="$PROJECT_DIR$/assets/js/theme/global/quick-search.js" />
+        <option value="$PROJECT_DIR$/assets/js/theme/common/product-details.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1380" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -297,24 +269,6 @@
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csf" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -327,10 +281,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/bc-TEK-POS-PAPER" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -376,16 +333,16 @@
       <workItem from="1561000378964" duration="13514000" />
       <workItem from="1561024415107" duration="1839000" />
       <workItem from="1561078982883" duration="6885000" />
-      <workItem from="1561685323128" duration="2068000" />
+      <workItem from="1561685323128" duration="3875000" />
+      <workItem from="1562055854127" duration="2002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158835000" />
+    <option name="totallyTimeSpent" value="162644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -422,7 +379,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/js/theme/common/product-details.js</url>
-          <line>284</line>
+          <line>293</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -444,13 +401,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/components/products/add-to-cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/dist/report.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -722,16 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35359">
-          <caret line="1872" column="19" selection-start-line="1872" selection-start-column="19" selection-end-line="1872" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/advance-quantity.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1330">
@@ -855,6 +795,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="85" column="97" selection-start-line="85" selection-start-column="97" selection-end-line="85" selection-end-column="97" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/components/common/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+          <folding>
+            <element signature="n#div#0;n#!!top" />
+            <element signature="n#div#1;n#!!top" />
+            <element signature="n#footer#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/theme/b2b/order-details.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16148">
@@ -869,22 +831,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/components/common/footer.html">
+    <entry file="file://$PROJECT_DIR$/.stencil">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
-          <folding>
-            <element signature="n#div#0;n#!!top" />
-            <element signature="n#div#1;n#!!top" />
-            <element signature="n#footer#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/theme/global/quick-search.js">
+    <entry file="file://$PROJECT_DIR$/assets/js/theme/common/product-details.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="85" column="97" lean-forward="true" selection-start-line="85" selection-start-column="97" selection-end-line="85" selection-end-column="97" />
+        <state relative-caret-position="-308">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

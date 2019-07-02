@@ -27,7 +27,6 @@ export default class ProductDetails {
         const $productOptionsElement = $('[data-product-option-change]', $form);
         const hasOptions = $productOptionsElement.html().trim().length;
         const hasDefaultOptions = $productOptionsElement.find('[data-default]').length;
-        console.log('qweeeeeeeeeee', $("[data-product-sku]", this.$scope),  this.$scope)
         $productOptionsElement.on('change', event => {
 
             this.productOptionsChanged(event);
@@ -50,7 +49,7 @@ export default class ProductDetails {
         this.gRoleId;
 
         if (sessionStorage.getItem("bundleb2b_user") && sessionStorage.getItem("bundleb2b_user") != "none") {
-
+            this.$wishlistContainer.hide();
             const bundleb2b_user = JSON.parse(sessionStorage.getItem("bundleb2b_user"));
             const $product_sku = $("[data-product-sku]", $scope);
             if ($product_sku.length > 0) {
